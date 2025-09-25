@@ -1,0 +1,23 @@
+:root {
+  --font-family-base: "DM Sans", sans-serif;
+  --font-family-accent: "Bricolage Grotesque", sans-serif;
+
+  //text colors
+  --colors-neutral-0: #ffffff;
+  --colors-neutral-200: #D4D3D9;
+  --colors-neutral-300: #ACACB7;
+  --colors-neutral-600: #3C3B5E;
+  --colors-neutral-700: #302F4A;
+  --colors-neutral-800: #262540;
+  --colors-neutral-900: #02012C;
+
+  --color-blue-500: #4658D9;
+
+
+  --container-width: 1220px;
+  --container-padding-x: 16px;
+
+  --transition-duration: 0.2s;
+
+  --border: 1px solid var(--colors-neutral-600);
+}

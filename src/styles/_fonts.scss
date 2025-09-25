@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  src: url('../../assets/fonts/BricolageGrotesque-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans', sans-serif;
+  src: url('../../assets/fonts/DMSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans', sans-serif;
+  src: url('../../assets/fonts/DMSans-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans, sans-serif';
+  src: url('../../assets/fonts/DMSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
