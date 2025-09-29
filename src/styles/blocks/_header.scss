@@ -1,6 +1,9 @@
 @use "../mixins" as *;
 
 .header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
   padding-top: var(--header-padding-top);
 
   &__body {
@@ -8,7 +11,7 @@
     justify-content: space-between;
   }
 
-  &__settings-button {
+  &__button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +23,20 @@
     border: none;
     border-radius: 8px;
 
+    @include mobile-s {
+      font-size: 14px;
+      padding: 8px 10px;
+      column-gap: 8px;
+      &-icon {
+        width: 14px;
+        height: 14px;
+      }
+      &-arrow {
+        width: 9px;
+        height: 14px;
+      }
+    }
+
     & span {
       display: flex;
       align-items: center;
@@ -27,7 +44,6 @@
     }
 
   }
-
 
 
   @include tablet {
@@ -38,16 +54,15 @@
     --header-padding-top: 16px;
   }
 
-//  @include mobile-s {
-//    &__logo,
-//    logo__image{
-//      margin-left: 0;
-//      align-self: flex-start;
-//      width: 163px;
-//      height: 28px;
-//    }
-//  }
+  @include mobile-s {
+    &__logo {
+      margin-left: 0;
+      align-self: flex-start;
+      width: 138px;
+      height: 28px;
+    }
   }
+}
 
 
 

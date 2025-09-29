@@ -265,13 +265,16 @@ body {
 }
 
 .header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
   padding-top: var(--header-padding-top);
 }
 .header__body {
   display: flex;
   justify-content: space-between;
 }
-.header__settings-button {
+.header__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -283,7 +286,22 @@ body {
   border: none;
   border-radius: 8px;
 }
-.header__settings-button span {
+@media (width <= 375px) {
+  .header__button {
+    font-size: 14px;
+    padding: 8px 10px;
+    column-gap: 8px;
+  }
+  .header__button-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .header__button-arrow {
+    width: 9px;
+    height: 14px;
+  }
+}
+.header__button span {
   display: flex;
   align-items: center;
   height: 19px;
@@ -296,6 +314,14 @@ body {
 @media (width <= 480.98px) {
   .header {
     --header-padding-top: 16px;
+  }
+}
+@media (width <= 375px) {
+  .header__logo {
+    margin-left: 0;
+    align-self: flex-start;
+    width: 138px;
+    height: 28px;
   }
 }
 
