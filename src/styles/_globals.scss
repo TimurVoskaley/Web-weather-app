@@ -1,0 +1,19 @@
+@use "mixins" as *;
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--colors-neutral-0);
+  background-color: var(--colors-neutral-900);
+
+}
+
+.container {
+  max-width: var(--container-width);
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
+
+  @include mobile-s {
+    --container-padding-x: 16px;
+  }
+}
+

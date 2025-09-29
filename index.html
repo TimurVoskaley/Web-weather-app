@@ -6,13 +6,43 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/weather-favicon.png">
   <link rel="stylesheet" href="src/styles/main.css"/>
-  <script src="src/scripts/main.js" type="module" defer></script>
+  <script src="src/scripts/main.js" type="module" ></script>
   <title>Weather app</title>
 
 </head>
 <body>
-
-
+  <header class="header">
+    <div class="header__body container">
+      <a
+        class="header__logo logo"
+        href="#"
+        aria-label="Home"
+        title="Home"
+      >
+        <img
+          class="logo__image"
+          src="./assets/images/logo.svg"
+          alt=""
+          width="197"
+          height="40"
+        />
+      </a>
+      <button
+        class="header__settings-button"
+        type="button"
+      >
+        <img
+        src="./assets/images/icon-units.svg"
+        alt=""
+        width="16"
+        height="16"
+        />
+        <span>Units</span>
+        <img src="./assets/images/icon-dropdown.svg" alt="" width="12" height="18" />
+      </button>
+    </div>
+  </header>
+  <main class="container"></main>
 
 </body>
 </html>

@@ -2,3 +2,6 @@
 @use "fonts";
 @use "variables";
 @use "globals";
+@use "mixins";
+
+@use 'blocks/header';
