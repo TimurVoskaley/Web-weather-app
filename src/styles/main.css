@@ -223,7 +223,7 @@ svg * {
   font-display: swap;
 }
 @font-face {
-  font-family: "DM Sans, sans-serif";
+  font-family: "DM Sansэ", sans-serif;
   src: url("../../assets/fonts/DMSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -264,6 +264,19 @@ body {
   }
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
 .header {
   width: 100%;
   position: fixed;
@@ -273,6 +286,9 @@ body {
 .header__body {
   display: flex;
   justify-content: space-between;
+}
+.header__button-container {
+  position: relative;
 }
 .header__button {
   display: flex;
@@ -285,6 +301,7 @@ body {
   background-color: var(--colors-neutral-800);
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
 @media (width <= 375px) {
   .header__button {
@@ -292,11 +309,11 @@ body {
     padding: 8px 10px;
     column-gap: 8px;
   }
-  .header__button-icon {
+  .header__button .units-button__settings-icon {
     width: 14px;
     height: 14px;
   }
-  .header__button-arrow {
+  .header__button .units-button__arrow-icon {
     width: 9px;
     height: 14px;
   }
@@ -323,6 +340,15 @@ body {
     width: 138px;
     height: 28px;
   }
+}
+
+.dropdown {
+  position: absolute;
+  width: 150px;
+  height: 250px;
+  right: 0;
+  top: 130%;
+  background-color: red;
 }
 
 /*# sourceMappingURL=main.css.map */

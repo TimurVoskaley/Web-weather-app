@@ -27,20 +27,25 @@
           height="40"
         />
       </a>
-      <button
-        class="header__button"
-        type="button"
-      >
-        <img
-        class="header__button-icon"
-        src="./assets/images/icon-units.svg"
-        alt=""
-        width="16"
-        height="16"
-        />
-        <span>Units</span>
-        <img class="header__button-arrow" src="./assets/images/icon-dropdown.svg" alt="" width="12" height="18" />
-      </button>
+      <div class="header__button-container">
+        <button
+          class="header__button units-button"
+          type="button"
+        >
+          <img
+            class="units-button__settings-icon"
+            src="./assets/images/icon-units.svg"
+            alt=""
+            width="16"
+            height="16"
+          />
+          <span>Units</span>
+          <img class="units-button__arrow-icon"
+               src="./assets/images/icon-dropdown.svg" alt="" width="12" height="18" />
+        </button>
+        <div class="units-button__menu dropdown"></div>
+      </div>
+
     </div>
   </header>
   <main class="container"></main>

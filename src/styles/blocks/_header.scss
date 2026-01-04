@@ -11,7 +11,12 @@
     justify-content: space-between;
   }
 
+  &__button-container {
+    position: relative;
+  }
+
   &__button {
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,16 +27,17 @@
     background-color: var(--colors-neutral-800);
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 
     @include mobile-s {
       font-size: 14px;
       padding: 8px 10px;
       column-gap: 8px;
-      &-icon {
+      .units-button__settings-icon {
         width: 14px;
         height: 14px;
       }
-      &-arrow {
+      .units-button__arrow-icon {
         width: 9px;
         height: 14px;
       }
@@ -62,6 +68,17 @@
       height: 28px;
     }
   }
+}
+
+
+.dropdown {
+  position: absolute;
+//  display: none;
+  width: 150px;
+  height: 250px;
+  right: 0;
+  top: 130%;
+  background-color: red;
 }
 
 
