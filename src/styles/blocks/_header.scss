@@ -1,4 +1,4 @@
-@use "../mixins" as *;
+@use "../helpers" as *;
 
 .header {
   width: 100%;
@@ -11,7 +11,7 @@
     justify-content: space-between;
   }
 
-  &__button-container {
+  &__button-wrapper {
     position: relative;
   }
 
@@ -20,33 +20,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 16px;
+    padding: rem(12) rem(16);
     color: inherit;
     font-weight: 500;
-    column-gap: 10px;
+    column-gap: rem(10);
     background-color: var(--colors-neutral-800);
     border: none;
-    border-radius: 8px;
+    border-radius: rem(8);
     cursor: pointer;
 
     @include mobile-s {
-      font-size: 14px;
-      padding: 8px 10px;
+      font-size: rem(14);
+      padding: rem(8) rem(10);
       column-gap: 8px;
       .units-button__settings-icon {
-        width: 14px;
-        height: 14px;
+        width: rem(14);
+        height: rem(14);
       }
       .units-button__arrow-icon {
-        width: 9px;
-        height: 14px;
+        width: rem(9);
+        height: rem(14);
       }
     }
 
     & span {
       display: flex;
       align-items: center;
-      height: 19px;
+      height: rem(19);
     }
 
   }
@@ -64,8 +64,8 @@
     &__logo {
       margin-left: 0;
       align-self: flex-start;
-      width: 138px;
-      height: 28px;
+      width: rem(138);
+      height: rem(28);
     }
   }
 }
@@ -73,9 +73,8 @@
 
 .dropdown {
   position: absolute;
-//  display: none;
-  width: 150px;
-  height: 250px;
+  width: rem(150);
+  height: rem(250);
   right: 0;
   top: 130%;
   background-color: red;
