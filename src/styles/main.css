@@ -204,7 +204,7 @@ svg * {
 @font-face {
   font-family: "Bricolage Grotesque", sans-serif;
   src: url("../../assets/fonts/BricolageGrotesque-Bold.woff2") format("woff2");
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -240,6 +240,8 @@ svg * {
   --colors-neutral-800: #262540;
   --colors-neutral-900: #02012C;
   --color-blue-500: #4658D9;
+  --color-blue-700: #2B1B9C;
+  --color-orange-500: #FF820A;
   --container-width: 1248px;
   --container-padding-x: 24px;
   --header-padding-top: 48px;
@@ -287,41 +289,41 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.header__button-container {
+.header__button-wrapper {
   position: relative;
 }
 .header__button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   color: inherit;
   font-weight: 500;
-  column-gap: 10px;
+  column-gap: 0.625rem;
   background-color: var(--colors-neutral-800);
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 @media (width <= 375px) {
   .header__button {
-    font-size: 14px;
-    padding: 8px 10px;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.625rem;
     column-gap: 8px;
   }
   .header__button .units-button__settings-icon {
-    width: 14px;
-    height: 14px;
+    width: 0.875rem;
+    height: 0.875rem;
   }
   .header__button .units-button__arrow-icon {
-    width: 9px;
-    height: 14px;
+    width: 0.5625rem;
+    height: 0.875rem;
   }
 }
 .header__button span {
   display: flex;
   align-items: center;
-  height: 19px;
+  height: 1.1875rem;
 }
 @media (width <= 1023.98px) {
   .header {
@@ -337,15 +339,15 @@ body {
   .header__logo {
     margin-left: 0;
     align-self: flex-start;
-    width: 138px;
-    height: 28px;
+    width: 8.625rem;
+    height: 1.75rem;
   }
 }
 
 .dropdown {
   position: absolute;
-  width: 150px;
-  height: 250px;
+  width: 9.375rem;
+  height: 15.625rem;
   right: 0;
   top: 130%;
   background-color: red;

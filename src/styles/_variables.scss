@@ -1,8 +1,11 @@
+@use 'helpers' as *;
+
 :root {
+  //используемые шрифты
   --font-family-base: "DM Sans", sans-serif;
   --font-family-accent: "Bricolage Grotesque", sans-serif;
 
-  //text colors
+  //цвета
   --colors-neutral-0: #ffffff;
   --colors-neutral-200: #D4D3D9;
   --colors-neutral-300: #ACACB7;
@@ -12,7 +15,9 @@
   --colors-neutral-900: #02012C;
 
   --color-blue-500: #4658D9;
+  --color-blue-700: #2B1B9C;
 
+  --color-orange-500: #FF820A;
 
   --container-width: 1248px;
   --container-padding-x: 24px;
