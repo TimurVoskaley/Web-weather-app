@@ -1,10 +1,13 @@
-@use "helpers" as *;
+@use "./helpers" as *;
 
 body {
   font-family: var(--font-family-base);
   color: var(--colors-neutral-0);
   background-color: var(--colors-neutral-900);
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
@@ -30,3 +33,27 @@ body {
   overflow: hidden !important;
 }
 
+.attribution {
+  @include text-preset-8;
+  display: flex;
+  gap: rem(16);
+  justify-content: center;
+  padding-block: rem(16);
+//  position: absolute;
+//  bottom: 0;
+//  width: 100%;
+
+  & a {
+    color: var(--color-orange-500);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #D96E08;
+    }
+  }
+}
+
+main { flex: 1; }
