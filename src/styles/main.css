@@ -285,11 +285,13 @@ body {
 
 .dropdown {
   position: absolute;
-  width: 9.375rem;
-  height: 15.625rem;
+  width: 13.375rem;
+  height: 25.75rem;
   right: 0;
-  top: 130%;
-  background-color: red;
+  top: calc(100% + 10px);
+  background-color: var(--colors-neutral-800);
+  border: var(--border);
+  border-radius: 12px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;

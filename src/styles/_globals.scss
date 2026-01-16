@@ -35,11 +35,13 @@ body {
 
 .dropdown {
   position: absolute;
-  width: rem(150);
-  height: rem(250);
+  width: rem(214);
+  height: rem(412);
   right: 0;
-  top: 130%;
-  background-color: red;
+  top: calc(100% + 10px);
+  background-color: var(--colors-neutral-800);
+  border: var(--border);
+  border-radius: 12px;
 
   // Скрыт по умолчанию
   opacity: 0;
