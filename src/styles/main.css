@@ -287,6 +287,7 @@ body {
   position: absolute;
   width: 13.375rem;
   height: 25.75rem;
+  padding: 0.5rem;
   right: 0;
   top: calc(100% + 10px);
   background-color: var(--colors-neutral-800);
@@ -360,6 +361,9 @@ main {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+.header__button:hover {
+  background-color: var(--colors-neutral-700);
+}
 @media (width <= 375px) {
   .header__button {
     font-size: 0.875rem;
@@ -379,6 +383,19 @@ main {
   display: flex;
   align-items: center;
   height: 1.1875rem;
+}
+.header-dropdown__btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  padding: 0.625rem 0.5rem;
+  border-radius: 8px;
+}
+.header-dropdown__btn:hover {
+  background-color: var(--colors-neutral-700);
 }
 @media (width <= 1023.98px) {
   .header {

@@ -30,6 +30,10 @@
     border-radius: rem(8);
     cursor: pointer;
 
+    &:hover {
+      background-color: var(--colors-neutral-700);
+    }
+
     @include mobile-s {
       font-size: rem(14);
       padding: rem(8) rem(10);
@@ -50,6 +54,21 @@
       height: rem(19);
     }
 
+  }
+
+  &-dropdown__btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    padding: rem(10) rem(8);
+    border-radius: 8px;
+
+    &:hover {
+      background-color: var(--colors-neutral-700);
+    }
   }
 
 
