@@ -44,25 +44,41 @@
           <img class="units-button__arrow-icon"
                src="./assets/images/icon-dropdown.svg" alt="" width="12" height="18" />
         </button>
+
         <div class="units-button__menu dropdown header-dropdown" data-js-header-dropdown>
           <button
             class="header-dropdown__btn"
             type="button"
+            data-js-header-dropdown-button
           >
             <p>Switch to Imperial</p>
           </button>
-        </div>
+
           <div class="header-dropdown__info">
             <section class="header-dropdown__section">
-              <p class="header-dropdown__section-title"></p>
+              <p class="header-dropdown__section-title">Temperature</p>
               <ul class="header-dropdown__section-list">
-                <li class="header-dropdown__section-item"></li>
-                <li class="header-dropdown__section-item"></li>
+                <li class="header-dropdown__section-item selected">Celsius (°C)</li>
+                <li class="header-dropdown__section-item">Fahrenheit (°F)</li>
               </ul>
             </section>
-            <section class="header-dropdown__section"></section>
-            <section class="header-dropdown__section"></section>
+            <section class="header-dropdown__section">
+              <p class="header-dropdown__section-title">Wind Speed</p>
+              <ul class="header-dropdown__section-list">
+                <li class="header-dropdown__section-item selected">km/h</li>
+                <li class="header-dropdown__section-item">mph</li>
+              </ul>
+            </section>
+            <section class="header-dropdown__section">
+              <p class="header-dropdown__section-title">Precipitation</p>
+              <ul class="header-dropdown__section-list">
+                <li class="header-dropdown__section-item selected">Millimeters (mm)</li>
+                <li class="header-dropdown__section-item">Inches (in)</li>
+              </ul>
+            </section>
           </div>
+        </div>
+
       </div>
 
     </div>

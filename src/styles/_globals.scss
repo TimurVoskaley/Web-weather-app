@@ -36,7 +36,7 @@ body {
 .dropdown {
   position: absolute;
   width: rem(214);
-  height: rem(412);
+//  height: rem(412);
   padding: rem(8);
   right: 0;
   top: calc(100% + 10px);
@@ -78,6 +78,11 @@ body {
     &:visited {
       color: #D96E08;
     }
+  }
+  @include tablet-s {
+    flex-direction: column;
+    gap: rem(6);
+    align-items: center;
   }
 }
 

@@ -57,6 +57,7 @@
   }
 
   &-dropdown__btn {
+    @include text-preset-7;
     display: block;
     width: 100%;
     text-align: left;
@@ -69,6 +70,51 @@
     &:hover {
       background-color: var(--colors-neutral-700);
     }
+  }
+
+  &-dropdown__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(4);
+  }
+
+  &-dropdown__section:not(:last-child) {
+    padding-bottom: rem(4);
+    border-bottom: var(--border);
+  }
+
+  &-dropdown__section-title {
+    @include text-preset-8;
+    color: var(--colors-neutral-300);
+    padding: rem(6) 0 0 rem(8);
+    margin-bottom: rem(8);
+  }
+
+  &-dropdown__section-item {
+    @include text-preset-7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(10) rem(8);
+
+    &.selected {
+      background-color: var(--colors-neutral-700);
+      width: 100%;
+      border-radius: 8px;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: rem(14);
+        height: rem(17);
+        background-image: url("../../assets/images/icon-checkmark.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+
+
   }
 
 
