@@ -316,8 +316,20 @@ main {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0;
+  text-align: center;
   color: var(--colors-neutral-0);
   margin-top: 4rem;
+}
+@media (width <= 768px) {
+  .main__title {
+    width: 30.125rem;
+    margin-top: 3rem;
+  }
+}
+@media (width <= 480.98px) {
+  .main__title {
+    width: 100%;
+  }
 }
 
 .attribution {
