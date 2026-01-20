@@ -32,6 +32,11 @@
       background-color: var(--colors-neutral-700);
     }
 
+    &:focus {
+      outline: 2px solid var(--colors-neutral-0);
+      outline-offset: 2px;
+    }
+
     @include mobile-s {
       font-size: rem(14);
       padding: rem(8) rem(10);
@@ -67,6 +72,11 @@
 
     &:hover {
       background-color: var(--colors-neutral-700);
+    }
+
+    &:focus {
+      outline: 1px solid var(--colors-neutral-0);
+      outline-offset: 1px;
     }
   }
 
@@ -116,7 +126,7 @@
   }
 
 
-  @include tablet {
+  @include tablet-s {
     --header-padding-top: 24px;
   }
 
