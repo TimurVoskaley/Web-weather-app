@@ -202,28 +202,28 @@ svg * {
   }
 }
 @font-face {
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Bricolage Grotesque";
   src: url("../../assets/fonts/BricolageGrotesque-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans";
   src: url("../../assets/fonts/DMSans-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans";
   src: url("../../assets/fonts/DMSans-SemiBoldItalic.woff2") format("woff2");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "DM Sansэ", sans-serif;
+  font-family: "DM Sans";
   src: url("../../assets/fonts/DMSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -306,6 +306,20 @@ body {
   transform: translateY(0);
 }
 
+main {
+  flex: 1;
+}
+
+.main__title {
+  font-family: var(--font-family-accent);
+  font-size: 3.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: var(--colors-neutral-0);
+  margin-top: 4rem;
+}
+
 .attribution {
   font-family: var(--font-family-base);
   font-size: 0.875rem;
@@ -336,14 +350,8 @@ body {
   }
 }
 
-main {
-  flex: 1;
-}
-
 .header {
   width: 100%;
-  position: fixed;
-  z-index: 1000;
   padding-top: var(--header-padding-top);
   background-color: inherit;
 }

@@ -60,6 +60,14 @@ body {
   transform: translateY(0);
 }
 
+main { flex: 1; }
+
+.main__title {
+  @include text-preset-2;
+  color: var(--colors-neutral-0);
+  margin-top: rem(64);
+}
+
 .attribution {
   @include text-preset-8;
   display: flex;
@@ -85,5 +93,3 @@ body {
     align-items: center;
   }
 }
-
-main { flex: 1; }
