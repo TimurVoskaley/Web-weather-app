@@ -27,12 +27,18 @@
     border: none;
     border-radius: rem(8);
     cursor: pointer;
+    transition-duration: var(--transition-duration);
 
     &:hover {
       background-color: var(--colors-neutral-700);
     }
 
     &:focus {
+      outline: none;
+      border: none;
+    }
+
+    &:focus-visible {
       outline: 2px solid var(--colors-neutral-0);
       outline-offset: 2px;
     }
@@ -59,71 +65,80 @@
 
   }
 
-  &-dropdown__btn {
-    @include text-preset-7;
-    display: block;
-    width: 100%;
-    text-align: left;
-    background-color: inherit;
-    color: inherit;
-    border: none;
-    padding: rem(10) rem(8);
-    border-radius: 8px;
+  &-dropdown {
+    width: rem(214);
 
-    &:hover {
-      background-color: var(--colors-neutral-700);
-    }
-
-    &:focus {
-      outline: 1px solid var(--colors-neutral-0);
-      outline-offset: 1px;
-    }
-  }
-
-  &-dropdown__info {
-    display: flex;
-    flex-direction: column;
-    row-gap: rem(4);
-  }
-
-  &-dropdown__section:not(:last-child) {
-    padding-bottom: rem(4);
-    border-bottom: var(--border);
-  }
-
-  &-dropdown__section-title {
-    @include text-preset-8;
-    color: var(--colors-neutral-300);
-    padding: rem(6) 0 0 rem(8);
-    margin-bottom: rem(8);
-  }
-
-  &-dropdown__section-item {
-    @include text-preset-7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: rem(10) rem(8);
-
-    &.selected {
-      background-color: var(--colors-neutral-700);
+    &__btn {
+      @include text-preset-7;
+      display: block;
       width: 100%;
+      text-align: left;
+      background-color: inherit;
+      color: inherit;
+      border: none;
+      padding: rem(10) rem(8);
       border-radius: 8px;
+      transition-duration: var(--transition-duration);
 
-      &::after {
-        content: '';
-        display: inline-block;
-        width: rem(14);
-        height: rem(17);
-        background-image: url("../../assets/images/icon-checkmark.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
+      &:hover {
+        background-color: var(--colors-neutral-700);
+      }
+
+      &:focus-visible {
+        outline: 1px solid var(--colors-neutral-0);
+        outline-offset: 1px;
       }
     }
 
+    &__info {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(4);
+    }
 
+    &__section:not(:last-child) {
+      padding-bottom: rem(4);
+      border-bottom: var(--border);
+    }
+
+    &__section-title {
+      @include text-preset-8;
+      color: var(--colors-neutral-300);
+      padding: rem(6) 0 0 rem(8);
+      margin-bottom: rem(8);
+    }
+
+    &__section-item {
+      @include text-preset-7;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem(10) rem(8);
+
+      &.selected {
+        background-color: var(--colors-neutral-700);
+        width: 100%;
+        border-radius: 8px;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          width: rem(14);
+          height: rem(17);
+          background-image: url("../../assets/images/icon-checkmark.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+
+
+    }
   }
+
+
+
+
 
 
   @include tablet-s {
@@ -144,7 +159,3 @@
   }
 }
 
-
-//.units-button__menu {
-
-//}

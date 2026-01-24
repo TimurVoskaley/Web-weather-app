@@ -3,7 +3,6 @@
 .search {
   display: flex;
   width: 100%;
-  gap: rem(16);
   justify-content: center;
   align-items: center;
   margin-bottom: rem(48);
@@ -12,14 +11,26 @@
     margin-bottom: rem(32)
   }
 
+  &__form {
+    display: flex;
+    gap: rem(16);
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: rem(526);
+  }
+
   &__input {
     @include text-preset-5-medium;
-    width: rem(526);
+    width: 100%;
     padding: rem(16) rem(24);
-    border: none;
     background-color: var(--colors-neutral-800);
     color: var(--colors-neutral-0);
     border-radius: rem(12);
+    transition-duration: var(--transition-duration);
 
 //    padding-left: rem(56); // Место для иконки
 //    background-image: url("../../assets/images/icon-search.svg");
@@ -28,11 +39,6 @@
 
     &:hover {
       background-color: var(--colors-neutral-700);
-    }
-
-    &:focus {
-      outline: 2px solid var(--colors-neutral-0);
-      outline-offset: 2px;
     }
 
     &::placeholder {
@@ -54,14 +60,15 @@
     color: var(--colors-neutral-0);
     border-radius: rem(12);
     border: none;
+    transition-duration: var(--transition-duration);
 
     &:hover {
       background-color: var(--colors-blue-700);
     }
 
-    &:focus {
-      outline: 2px solid var(--colors-blue-500);
-      outline-offset: 2px;
-    }
+  }
+
+  &__autocomplete {
+    width: 100%;
   }
 }

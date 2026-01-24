@@ -87,20 +87,34 @@
   <main class="container">
     <h1 class="main__title">How’s the sky looking today?</h1>
 
-    <form class="search" role="search">
-      <label for="city-search" class="search__label visually-hidden">Search for a city</label>
-      <input
-        class="search__input"
-        type="text"
-        name="place"
-        id="city-search"
-        aria-label="Enter city name"
-        autocomplete="off"
-        placeholder="Search for a place..."
-        data-js-search-input
-      >
-      <button class="search__button" type="submit" data-js-search-button>Search</button>
-    </form>
+    <section class="search">
+      <form class="search__form" role="search">
+        <label for="city-search" class="search__label visually-hidden">Search for a city</label>
+        <div class="search__input-wrapper">
+          <input
+            class="search__input"
+            type="text"
+            name="place"
+            id="city-search"
+            aria-label="Enter city name"
+            autocomplete="off"
+            placeholder="Search for a place..."
+            data-js-search-input
+          >
+          <div class="search__autocomplete dropdown dropdown-visible" >
+            <ul class="search__autocomplete-list">
+              <li class="search__autocomplete-item selected">City Name</li>
+              <li class="search__autocomplete-item">City Name</li>
+              <li class="search__autocomplete-item">City Name</li>
+              <li class="search__autocomplete-item">City Name</li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="search__button" type="submit" data-js-search-button>Search</button>
+      </form>
+
+    </section>
 
     <section class="weather"></section>
   </main>

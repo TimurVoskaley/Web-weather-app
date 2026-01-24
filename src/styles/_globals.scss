@@ -1,6 +1,14 @@
 @use "./helpers" as *;
 
-*:focus {
+input,
+button,
+a {
+  outline: none;
+  border: none;
+}
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
   outline: 2px solid var(--colors-neutral-0);
   outline-offset: 2px;
 }
@@ -13,6 +21,10 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+a {
+  transition-duration: var(--transition-duration);
 }
 
 .container {
@@ -40,7 +52,7 @@ body {
 
 .dropdown {
   position: absolute;
-  width: rem(214);
+//  width: rem(214);
 //  height: rem(412);
   padding: rem(8);
   right: 0;
@@ -93,7 +105,6 @@ main { flex: 1; }
   & a {
     color: var(--color-orange-500);
     text-decoration: none;
-    transition: text-decoration var(--transition-duration);
 
     &:hover {
       text-decoration: underline;
