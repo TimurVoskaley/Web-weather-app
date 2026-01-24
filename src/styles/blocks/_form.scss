@@ -70,5 +70,24 @@
 
   &__autocomplete {
     width: 100%;
+    margin-top: rem(4);
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: rem(4);
+    }
+
+    &-item {
+      @include text-preset-7;
+      width: 100%;
+      padding: rem(10) rem(8);
+
+      &:hover {
+        background-color: var(--colors-neutral-700);
+        border-radius: 8px;
+        outline: 1px solid var(--colors-neutral-600);
+      }
+    }
   }
 }

@@ -589,6 +589,26 @@ main {
 }
 .search__autocomplete {
   width: 100%;
+  margin-top: 0.25rem;
+}
+.search__autocomplete-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.search__autocomplete-item {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  width: 100%;
+  padding: 0.625rem 0.5rem;
+}
+.search__autocomplete-item:hover {
+  background-color: var(--colors-neutral-700);
+  border-radius: 8px;
+  outline: 1px solid var(--colors-neutral-600);
 }
 
 /*# sourceMappingURL=main.css.map */
