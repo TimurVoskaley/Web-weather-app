@@ -1,0 +1,64 @@
+@use '../helpers' as *;
+
+.weather {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: rem(32);
+
+  &__info-wrapper {
+
+  }
+
+  &__hourly {
+    background-color: var(--colors-neutral-800);
+    border-radius: rem(20);
+    padding: rem(24);
+
+    &-header-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-title {
+      @include text-preset-5;
+    }
+
+    &-button {
+      @include text-preset-7;
+      width: rem(120);
+      height: rem(37);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: rem(12);
+      color: var(--colors-neutral-0);
+      background-color: var(--colors-neutral-600);
+      border-radius: rem(8);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      padding-block: rem(16);
+      gap: rem(16);
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: rem(8);
+      padding: rem(10) rem(16) rem(10) rem(12);
+      background-color: var(--colors-neutral-700);
+      border: var(--border);
+      border-radius: rem(8);
+    }
+
+    &-time {
+      flex: 1;
+    }
+  }
+}
+
+

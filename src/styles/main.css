@@ -279,6 +279,7 @@ a {
 
 .container {
   max-width: var(--container-width);
+  width: 100%;
   padding-inline: var(--container-padding-x);
   margin-inline: auto;
 }
@@ -413,7 +414,18 @@ main {
   cursor: pointer;
   transition-duration: var(--transition-duration);
 }
-.header__button:hover {
+@media (hover: hover) {
+  .header__button:hover {
+    background-color: var(--colors-neutral-700);
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .header__button:active {
+    transform: scale(1.03);
+    transition: transform 0.1s;
+  }
+}
+.header__button:active {
   background-color: var(--colors-neutral-700);
 }
 .header__button:focus {
@@ -463,8 +475,19 @@ main {
   border-radius: 8px;
   transition-duration: var(--transition-duration);
 }
-.header-dropdown__btn:hover {
+@media (hover: hover) {
+  .header-dropdown__btn:hover {
+    background-color: var(--colors-neutral-700);
+  }
+}
+.header-dropdown__btn:active {
   background-color: var(--colors-neutral-700);
+}
+@media (hover: none) and (pointer: coarse) {
+  .header-dropdown__btn:active {
+    transform: scale(1.03);
+    transition: transform 0.1s;
+  }
 }
 .header-dropdown__btn:focus-visible {
   outline: 1px solid var(--colors-neutral-0);
@@ -581,8 +604,19 @@ main {
   border-radius: 0.75rem;
   transition-duration: var(--transition-duration);
 }
-.search__input:hover {
+.search__input:active {
   background-color: var(--colors-neutral-700);
+}
+@media (hover: hover) {
+  .search__input:hover {
+    background-color: var(--colors-neutral-700);
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .search__input:active {
+    transform: scale(1.03);
+    transition: transform 0.1s;
+  }
 }
 .search__input::placeholder {
   color: var(--colors-neutral-200);
@@ -605,8 +639,19 @@ main {
   border: none;
   transition-duration: var(--transition-duration);
 }
-.search__button:hover {
+@media (hover: hover) {
+  .search__button:hover {
+    background-color: var(--colors-blue-700);
+  }
+}
+.search__button:active {
   background-color: var(--colors-blue-700);
+}
+@media (hover: none) and (pointer: coarse) {
+  .search__button:active {
+    transform: scale(1.03);
+    transition: transform 0.1s;
+  }
 }
 .search__autocomplete {
   width: 100%;
@@ -626,10 +671,81 @@ main {
   width: 100%;
   padding: 0.625rem 0.5rem;
 }
-.search__autocomplete-item:hover {
+@media (hover: hover) {
+  .search__autocomplete-item:hover {
+    background-color: var(--colors-neutral-700);
+    border-radius: 8px;
+    outline: 1px solid var(--colors-neutral-600);
+  }
+}
+.search__autocomplete-item:active {
   background-color: var(--colors-neutral-700);
   border-radius: 8px;
   outline: 1px solid var(--colors-neutral-600);
+}
+@media (hover: none) and (pointer: coarse) {
+  .search__autocomplete-item:active {
+    transform: scale(1.03);
+    transition: transform 0.1s;
+  }
+}
+
+.weather {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 2rem;
+}
+.weather__hourly {
+  background-color: var(--colors-neutral-800);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+.weather__hourly-header-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.weather__hourly-title {
+  font-family: var(--font-family-base);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.weather__hourly-button {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  width: 7.5rem;
+  height: 2.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--colors-neutral-0);
+  background-color: var(--colors-neutral-600);
+  border-radius: 0.5rem;
+}
+.weather__hourly-list {
+  display: flex;
+  flex-direction: column;
+  padding-block: 1rem;
+  gap: 1rem;
+}
+.weather__hourly-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem 0.625rem 0.75rem;
+  background-color: var(--colors-neutral-700);
+  border: var(--border);
+  border-radius: 0.5rem;
+}
+.weather__hourly-time {
+  flex: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

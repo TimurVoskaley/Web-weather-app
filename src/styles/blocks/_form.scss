@@ -51,8 +51,22 @@
 
     }
 
-    &:hover {
+    &:active {
       background-color: var(--colors-neutral-700);
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--colors-neutral-700);
+      }
+    }
+
+    // Дополнительно: улучшаем тач-опыт
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        // Усиливаем эффект для тач-устройств
+        transform: scale(1.03);
+        transition: transform 0.1s;
+      }
     }
 
     &::placeholder {
@@ -76,8 +90,23 @@
     border: none;
     transition-duration: var(--transition-duration);
 
-    &:hover {
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--colors-blue-700);
+      }
+    }
+
+    &:active {
       background-color: var(--colors-blue-700);
+    }
+
+    // Дополнительно: улучшаем тач-опыт
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        // Усиливаем эффект для тач-устройств
+        transform: scale(1.03);
+        transition: transform 0.1s;
+      }
     }
 
   }
@@ -97,10 +126,27 @@
       width: 100%;
       padding: rem(10) rem(8);
 
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--colors-neutral-700);
+          border-radius: 8px;
+          outline: 1px solid var(--colors-neutral-600);
+        }
+      }
+
+      &:active {
         background-color: var(--colors-neutral-700);
         border-radius: 8px;
         outline: 1px solid var(--colors-neutral-600);
+      }
+
+      // Дополнительно: улучшаем тач-опыт
+      @media (hover: none) and (pointer: coarse) {
+        &:active {
+          // Усиливаем эффект для тач-устройств
+          transform: scale(1.03);
+          transition: transform 0.1s;
+        }
       }
     }
   }

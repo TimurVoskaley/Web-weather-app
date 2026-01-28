@@ -29,7 +29,22 @@
     cursor: pointer;
     transition-duration: var(--transition-duration);
 
-    &:hover {
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--colors-neutral-700);
+      }
+    }
+
+    // Дополнительно: улучшаем тач-опыт
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        // Усиливаем эффект для тач-устройств
+        transform: scale(1.03);
+        transition: transform 0.1s;
+      }
+    }
+
+    &:active {
       background-color: var(--colors-neutral-700);
     }
 
@@ -80,8 +95,23 @@
       border-radius: 8px;
       transition-duration: var(--transition-duration);
 
-      &:hover {
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--colors-neutral-700);
+        }
+      }
+
+      &:active {
         background-color: var(--colors-neutral-700);
+      }
+
+      // Дополнительно: улучшаем тач-опыт
+      @media (hover: none) and (pointer: coarse) {
+        &:active {
+          // Усиливаем эффект для тач-устройств
+          transform: scale(1.03);
+          transition: transform 0.1s;
+        }
       }
 
       &:focus-visible {
@@ -135,10 +165,6 @@
 
     }
   }
-
-
-
-
 
 
   @include tablet-s {

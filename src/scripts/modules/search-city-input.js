@@ -33,7 +33,7 @@ export const initSearchCityInput = () => {
     if(e.target.matches('.search__autocomplete-item')) {
       inputElement.value = e.target.textContent;
       autocompleteDropdownElement.classList.remove('dropdown-visible');
-      inputElement.blur();
+      // inputElement.blur();
 
       // Можно вызвать дополнительный функционал, например поиск погоды
       // searchWeather(inputElement.value);

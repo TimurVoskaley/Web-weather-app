@@ -115,7 +115,46 @@
 
     </section>
 
-    <section class="weather"></section>
+    <section class="weather">
+      <div class="weather__info-wrapper"></div>
+      <div class="weather__hourly">
+        <div class="weather__hourly-header-wrap">
+          <p class="weather__hourly-title">Hourly forecast</p>
+
+          <button
+            class="weather__hourly-button"
+            type="button"
+            data-js-hourly-button
+          >
+            <span>Tuesday</span>
+            <img class="units-button__arrow-icon"
+                 src="./assets/images/icon-dropdown.svg"
+                 alt=""
+                 width="12"
+                 height="18"
+            />
+          </button>
+        </div>
+
+        <ul class="weather__hourly-list">
+          <li class="weather__hourly-item">
+            <img
+              class="weather__hourly-image"
+              src="../../../assets/images/icon-overcast.webp"
+              alt="overcast"
+              width="40"
+              height="40"
+              loading="lazy"
+            />
+<!--            <div class="weather__hourly-content">-->
+              <span class="weather__hourly-time">3 pm</span>
+              <span class="weather__hourly-temperature">20&deg;</span>
+<!--            </div>-->
+          </li>
+
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="attribution">
