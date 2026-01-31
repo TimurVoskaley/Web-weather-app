@@ -81,7 +81,7 @@
   }
 
   &-dropdown {
-    width: rem(214);
+    z-index: 5000;
 
     &__btn {
       @include text-preset-7;
@@ -145,12 +145,7 @@
       align-items: center;
       padding: rem(10) rem(8);
 
-      &.selected {
-        background-color: var(--colors-neutral-700);
-        width: 100%;
-        border-radius: 8px;
-
-        &::after {
+      &.selected::after {
           content: '';
           display: inline-block;
           width: rem(14);
@@ -160,9 +155,6 @@
           background-position: center;
           background-size: contain;
         }
-      }
-
-
     }
   }
 

@@ -310,6 +310,7 @@ a {
 
 .dropdown {
   position: absolute;
+  width: 13.375rem;
   padding: 0.5rem;
   right: 0;
   top: calc(100% + 10px);
@@ -328,6 +329,12 @@ a {
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+.selected {
+  background-color: var(--colors-neutral-700);
+  width: 100%;
+  border-radius: 8px;
 }
 
 main {
@@ -457,7 +464,7 @@ main {
   height: 1.1875rem;
 }
 .header-dropdown {
-  width: 13.375rem;
+  z-index: 5000;
 }
 .header-dropdown__btn {
   font-family: var(--font-family-base);
@@ -522,11 +529,6 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 0.625rem 0.5rem;
-}
-.header-dropdown__section-item.selected {
-  background-color: var(--colors-neutral-700);
-  width: 100%;
-  border-radius: 8px;
 }
 .header-dropdown__section-item.selected::after {
   content: "";
@@ -727,8 +729,7 @@ main {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0;
-  width: 7.5rem;
-  height: 2.3125rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -736,6 +737,14 @@ main {
   color: var(--colors-neutral-0);
   background-color: var(--colors-neutral-600);
   border-radius: 0.5rem;
+}
+.weather__hourly-day-item {
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  padding: 0.625rem 0.5rem;
 }
 .weather__hourly-list {
   display: flex;
