@@ -109,7 +109,7 @@ main {
   display: flex;
   gap: rem(16);
   justify-content: center;
-  padding-block: rem(16);
+  padding-bottom: rem(12);
 
   & a {
     color: var(--color-orange-500);

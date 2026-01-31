@@ -368,7 +368,7 @@ main {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  padding-block: 1rem;
+  padding-bottom: 0.75rem;
 }
 .attribution a {
   color: var(--color-orange-500);
@@ -695,15 +695,24 @@ main {
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media (width <= 768px) {
+  .weather {
+    margin-bottom: 2rem;
+  }
 }
 .weather__hourly {
   background-color: var(--colors-neutral-800);
   border-radius: 1.25rem;
-  padding: 1.5rem;
+  padding-block: 1.5rem;
 }
 .weather__hourly-header-wrap {
+  position: relative;
   display: flex;
   justify-content: space-between;
+  margin-inline: 1.5rem;
+  margin-bottom: 1rem;
 }
 .weather__hourly-title {
   font-family: var(--font-family-base);
@@ -730,16 +739,31 @@ main {
 }
 .weather__hourly-list {
   display: flex;
+  height: 37rem;
+  padding-inline: 1.5rem;
   flex-direction: column;
-  padding-block: 1rem;
   gap: 1rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colors-neutral-700) transparent;
+}
+.weather__hourly-list::-webkit-scrollbar {
+  width: 0.25rem;
+}
+.weather__hourly-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.weather__hourly-list::-webkit-scrollbar-thumb {
+  background-color: var(--colors-neutral-700);
+  border: 1px solid #3C3B5E;
+  border-radius: 0.75rem;
 }
 .weather__hourly-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding: 0.625rem 1rem 0.625rem 0.75rem;
+  padding: 0.5625rem 0.9375rem 0.5625rem 0.6875rem;
   background-color: var(--colors-neutral-700);
   border: var(--border);
   border-radius: 0.5rem;
