@@ -38,7 +38,7 @@ a {
     --container-padding-x: 24px;
   }
 
-  @include mobile-s {
+  @include mobile {
     --container-padding-x: 16px;
   }
 }
@@ -108,6 +108,10 @@ main {
 
   @include mobile {
     width: 100%;
+  }
+
+  @media (width < 375px) {
+    font-size: rem(48);
   }
 }
 

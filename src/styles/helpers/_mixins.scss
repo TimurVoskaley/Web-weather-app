@@ -1,8 +1,8 @@
 @use './functions' as *;
 
-$tablet: 1023.98px;
+$tablet: 1024px;
 $tablet-s: 768px;
-$mobile: 480.98px;
+$mobile: 481px;
 $mobile-s: 375px;
 
 @mixin tablet {

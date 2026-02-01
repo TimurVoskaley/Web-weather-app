@@ -116,7 +116,47 @@
     </section>
 
     <section class="weather">
-      <div class="weather__info-wrapper"></div>
+      <div class="weather__info-wrapper">
+        <div class="weather__current">
+          <article class="weather__current-card ">
+            <div class="weather__current-card-content">
+              <div class="weather__current-card-text">
+                <p class="weather__current-card-city">Berlin, Germany</p>
+                <p class="weather__current-card-date">Tuesday, Aug 5, 2025</p>
+              </div>
+              <div class="weather__current-card-temperature">
+                <img
+                  class="weather__current-card-icon"
+                  src="./assets/images/icon-sunny.webp"
+                  alt="weather icon"
+                  width="120"
+                  height="120"
+                >
+                <p class="weather__current-card-degrees">20&deg;</p>
+              </div>
+            </div>
+          </article>
+          <ul class="weather__current-details-list">
+            <li class="weather__current-details-item">
+              <p class="weather__current-details-label">Feels Like</p>
+              <p class="weather__current-details-value">18&deg;</p>
+            </li>
+            <li class="weather__current-details-item">
+              <p class="weather__current-details-label">Humidity</p>
+              <p class="weather__current-details-value">46<span>%</span></p>
+            </li>
+            <li class="weather__current-details-item">
+              <p class="weather__current-details-label">Wind</p>
+              <p class="weather__current-details-value">14 <span>km/h</span></p>
+            </li>
+            <li class="weather__current-details-item">
+            <p class="weather__current-details-label">Precipitation</p>
+            <p class="weather__current-details-value">0 <span>mm</span></p>
+          </li>
+          </ul>
+        </div>
+        <div class="weather__daily-forecast"></div>
+      </div>
       <div class="weather__hourly">
         <div class="weather__hourly-header-wrap">
           <p class="weather__hourly-title">Hourly forecast</p>
