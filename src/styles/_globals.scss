@@ -33,6 +33,10 @@ a {
   padding-inline: var(--container-padding-x);
   margin-inline: auto;
 
+  @media (max-width: 1160px) {
+    width: rem(850);
+  }
+
   @include tablet-s {
     width: 100%;
     --container-padding-x: 24px;
