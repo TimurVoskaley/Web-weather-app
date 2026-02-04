@@ -84,6 +84,23 @@
     </div>
   </header>
 
+  <div class="container api-error">
+    <img
+      src="./assets/images/icon-error.svg"
+      alt="We couldn’t connect to the server (API error). Please try again in a few moments."
+      width="42"
+      height="42"
+    >
+    <h2 class="api-error__title">Something went wrong</h2>
+    <p class="api-error__description">We couldn’t connect to the server (API error). Please try again in a few moments.</p>
+    <button
+      class="api-error__button"
+      type="reset"
+    >
+      Retry
+    </button>
+  </div>
+
   <main class="container">
     <h1 class="main__title">How’s the sky looking today?</h1>
 
@@ -115,7 +132,9 @@
 
     </section>
 
-    <section class="weather">
+    <p class="no-search-result-found">No search result found!</p>
+
+    <section class="weather" >
       <div class="weather__info-wrapper">
         <div class="weather__current">
           <article class="weather__current-card ">
