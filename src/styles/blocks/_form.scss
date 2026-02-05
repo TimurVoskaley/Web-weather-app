@@ -1,0 +1,153 @@
+@use '../helpers' as *;
+
+.search {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(48);
+
+  @include tablet-s {
+    margin-bottom: rem(32)
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    gap: rem(16);
+    width: 100%;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: rem(526);
+
+    @include tablet-s {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    @include text-preset-5-medium;
+    width: 100%;
+    padding: rem(16) rem(24);
+    background-color: var(--colors-neutral-800);
+    color: var(--colors-neutral-0);
+    border-radius: rem(12);
+    transition-duration: var(--transition-duration);
+
+//    padding-left: rem(56); // Место для иконки
+//    background-image: url("../../assets/images/icon-search.svg");
+//    background-repeat: no-repeat;
+//    background-position: rem(24) center;
+
+    @include tablet-s {
+
+    }
+
+    &:active {
+      background-color: var(--colors-neutral-700);
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--colors-neutral-700);
+      }
+    }
+
+    // Дополнительно: улучшаем тач-опыт
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        // Усиливаем эффект для тач-устройств
+        transform: scale(1.03);
+        transition: transform 0.1s;
+      }
+    }
+
+    &::placeholder {
+      color: var(--colors-neutral-200);
+      padding-left: rem(36);
+
+      // Фоновая иконка
+      background-image: url("../../assets/images/icon-search.svg");
+      background-repeat: no-repeat;
+      background-position: 0 center; // Отступ слева
+      background-size: rem(20) rem(20);
+    }
+  }
+
+  &__button {
+    @include text-preset-5-medium;
+    padding: rem(16) rem(24);
+    background-color: var(--colors-blue-500);
+    color: var(--colors-neutral-0);
+    border-radius: rem(12);
+    border: none;
+    transition-duration: var(--transition-duration);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--colors-blue-700);
+      }
+    }
+
+    &:active {
+      background-color: var(--colors-blue-700);
+    }
+
+    // Дополнительно: улучшаем тач-опыт
+    @media (hover: none) and (pointer: coarse) {
+      &:active {
+        // Усиливаем эффект для тач-устройств
+        transform: scale(1.03);
+        transition: transform 0.1s;
+      }
+    }
+
+  }
+
+  &__autocomplete {
+    width: 100%;
+    margin-top: rem(4);
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: rem(4);
+    }
+
+    &-item {
+      @include text-preset-7;
+      width: 100%;
+      padding: rem(10) rem(8);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--colors-neutral-700);
+          border-radius: 8px;
+          outline: 1px solid var(--colors-neutral-600);
+        }
+      }
+
+      &:active {
+        background-color: var(--colors-neutral-700);
+        border-radius: 8px;
+        outline: 1px solid var(--colors-neutral-600);
+      }
+
+      // Дополнительно: улучшаем тач-опыт
+      @media (hover: none) and (pointer: coarse) {
+        &:active {
+          // Усиливаем эффект для тач-устройств
+          transform: scale(1.03);
+          transition: transform 0.1s;
+        }
+      }
+    }
+  }
+}

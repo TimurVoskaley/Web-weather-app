@@ -1,0 +1,104 @@
+@use './functions' as *;
+
+$tablet: 1024px;
+$tablet-s: 768px;
+$mobile: 481px;
+$mobile-s: 375px;
+
+@mixin tablet {
+  @media (width <= $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-s {
+  @media (width <= $tablet-s) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (width <= $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile-s {
+  @media (width <= $mobile-s) {
+    @content;
+  }
+}
+
+// типографика
+@mixin text-preset-1 {
+  font-family: var(--font-family-base);
+  font-size: rem(96);
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -2px;
+}
+
+@mixin text-preset-2 {
+  font-family: var(--font-family-accent);
+  font-size: rem(52);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-3 {
+  font-family: var(--font-family-base);
+  font-size: rem(32);
+  font-weight: 300;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-4 {
+  font-family: var(--font-family-base);
+  font-size: rem(28);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-5 {
+  font-family: var(--font-family-base);
+  font-size: rem(20);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-5-medium {
+  font-family: var(--font-family-base);
+  font-size: rem(20);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-6 {
+  font-family: var(--font-family-base);
+  font-size: rem(18);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-7 {
+  font-family: var(--font-family-base);
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@mixin text-preset-8 {
+  font-family: var(--font-family-base);
+  font-size: rem(14);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+

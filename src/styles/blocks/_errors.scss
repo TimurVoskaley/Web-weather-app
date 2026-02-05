@@ -1,0 +1,67 @@
+@use '../helpers' as *;
+
+.no-search-result-found {
+  display: none;
+  @include text-preset-4;
+}
+
+.api-error {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin-top: rem(64);
+  padding-top: rem(40);
+  gap: rem(24);
+
+  &__title {
+    @include text-preset-2;
+  }
+
+  &__description {
+    @include text-preset-5-medium;
+    width: rem(554);
+    text-align: center;
+    color: var(--colors-neutral-200);
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colors-neutral-800);
+    padding: rem(12) rem(16);
+    border-radius: rem(8);
+    color: var(--colors-neutral-0);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--colors-neutral-700);
+    }
+
+    &.loading {
+      pointer-events: none;
+      opacity: 0.8;
+
+      &:before {
+        animation: spin 1s linear infinite;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      background-image: url("../../../assets/images/icon-retry.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: rem(16);
+      height: rem(16);
+      margin-right: rem(10);
+      transition: transform 0.3s;
+    }
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

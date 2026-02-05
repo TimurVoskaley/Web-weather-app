@@ -1,0 +1,146 @@
+@use "./helpers" as *;
+
+input,
+button,
+a {
+  outline: none;
+  border: none;
+}
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--colors-neutral-0);
+  outline-offset: 2px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--colors-neutral-0);
+  background-color: var(--colors-neutral-900);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  transition-duration: var(--transition-duration);
+}
+
+.container {
+  max-width: var(--container-width);
+  width: 100%;
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
+
+  @media (max-width: 1160px) {
+    width: rem(850);
+  }
+
+  @include tablet-s {
+    width: 100%;
+    --container-padding-x: 24px;
+  }
+
+  @include mobile {
+    --container-padding-x: 16px;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.dropdown {
+  position: absolute;
+  width: rem(214);
+  padding: rem(8);
+  right: 0;
+  top: calc(100% + 10px);
+  background-color: var(--colors-neutral-800);
+  border: var(--border);
+  border-radius: 12px;
+
+  // Скрыт по умолчанию
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity var(--transition-duration), visibility var(--transition-duration), transform var(--transition-duration);
+}
+
+// Класс для отображения
+.dropdown-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.selected {
+  background-color: var(--colors-neutral-700);
+  width: 100%;
+  border-radius: 8px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.main__title {
+  @include text-preset-2;
+  text-align: center;
+  color: var(--colors-neutral-0);
+  margin-block: rem(64);
+
+  @include tablet-s {
+    width: rem(482);
+    margin-block: rem(48);
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
+  @media (width < 375px) {
+    font-size: rem(48);
+  }
+}
+
+.attribution {
+  @include text-preset-8;
+  display: flex;
+  gap: rem(16);
+  justify-content: center;
+  padding-bottom: rem(12);
+
+  & a {
+    color: var(--color-orange-500);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #D96E08;
+    }
+  }
+  @include tablet-s {
+    flex-direction: column;
+    gap: rem(6);
+    align-items: center;
+  }
+}
+
