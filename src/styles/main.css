@@ -947,6 +947,7 @@ main {
   line-height: 1.2;
   letter-spacing: 0;
   padding: 0.625rem 0.5rem;
+  cursor: pointer;
 }
 .weather__hourly-list {
   display: flex;
