@@ -1,7 +1,6 @@
 export async function getCoordinatesByCity(cityName) {
   try {
     const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=ru`;
-
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -33,3 +32,17 @@ export async function getCoordinatesByCity(cityName) {
   }
 }
 
+
+
+//получение названия горрда из координат
+// const reverseGeocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+//
+// fetch(reverseGeocodeUrl)
+//   .then(response => response.json())
+//   .then(data => {
+//     const cityName = data.address.city ||
+//       data.address.town ||
+//       data.address.village ||
+//       data.address.municipality;
+//     console.log("Город:", cityName);
+//   });

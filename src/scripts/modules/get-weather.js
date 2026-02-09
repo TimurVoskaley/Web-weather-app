@@ -4,8 +4,8 @@ export async function getWeather(lat, lon, units = 'metric') {
   const windUnit = units === 'metric' ? 'kmh' : units === 'imperial' ? 'mph' : 'kmh';
   const precipUnit = units === 'metric' ? 'mm' : 'inch';
 
-  // Формируем URL с параметрами единиц
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m&temperature_unit=${tempUnit}&wind_speed_unit=${windUnit}&precipitation_unit=${precipUnit}`;
+  // Формируем URL с параметрами единицр
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weather_code&hourly=temperature_2m,weather_code&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m&temperature_unit=${tempUnit}&wind_speed_unit=${windUnit}&precipitation_unit=${precipUnit}`;
 
   try {
     const response = await fetch(url);
