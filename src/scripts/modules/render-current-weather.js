@@ -1,11 +1,12 @@
 export async function renderCurrentWeatherElements(weather) {
   const cityNameElement = document.querySelector('[data-js-current-weather-city-name]');
   const dateElement = document.querySelector('[data-js-weather-date]');
+  const currentTemperatureElement = document.querySelector('[data-js-current-temperature]');
 
   try {
     // Ждем получения данных о городе
     const cityData = await getCityName(weather.latitude, weather.longitude);
-
+    currentTemperatureElement.textContent = Math.round(weather.current.temperature_2m);
     if (cityData.city && cityData.country) {
       cityNameElement.textContent = `${cityData.city}, ${cityData.country}`;
     }
@@ -24,11 +25,11 @@ export async function renderCurrentWeatherElements(weather) {
 // Получаем назавние населенного пункта из координать полученной погоды
 async function getCityName(lat, lon) {
   try {
-    const reverseGeocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&accept-language=en`;
+    const reverseGeocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&accept-language=en&zoom=10&addressdetails=1`;
 
     const response = await fetch(reverseGeocodeUrl, {
       headers: {
-        'User-Agent': 'WeatherApp/1.0 (contact@example.com)'
+        'User-Agent': 'Web-weather-app/1.0 (timur.fumoff@gmail.com)'
       }
     });
 
@@ -38,15 +39,12 @@ async function getCityName(lat, lon) {
 
     const data = await response.json();
 
-    // Возвращаем ВЕСЬ объект данных, а не только название
     return {
       city: data.address.city ||
         data.address.town ||
         data.address.village ||
         data.address.municipality,
-      country: data.address.country,
-      fullAddress: data.address,
-      displayName: data.display_name
+      country: data.address.country
     };
 
   } catch (error) {
@@ -63,10 +61,10 @@ function getCurrentDate(date) {
   const currentDate = new Date(date);
 
   const formattedDate = currentDate.toLocaleDateString('en-US', {
-    weekday: 'long',    // Tuesday
-    month: 'short',     // Aug
-    day: 'numeric',     // 5
-    year: 'numeric'     // 2025
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
   });
   return formattedDate;
 }

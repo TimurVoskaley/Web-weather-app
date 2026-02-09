@@ -8,6 +8,7 @@ import { getCoordinatesByCity } from './modules/get-city-cordinates.js';
 import { renderCurrentWeatherElements } from './modules/render-current-weather.js';
 
 const searchCityButtonElement = document.querySelector('[data-js-search-button]');
+const searchCityInputElement = document.querySelector('[data-js-search-input]');
 let weather = null;
 
 
@@ -19,25 +20,42 @@ document.addEventListener("DOMContentLoaded", () => {
   // initGeolocation();
 });
 
-searchCityButtonElement.addEventListener('click', async (event) => {
-  const searchCityInput = document.querySelector('[data-js-search-input]');
+searchCityButtonElement.addEventListener('click', await getCurrentWeather)
+searchCityInputElement.addEventListener('keypress', async (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    searchCityButtonElement.click()
+    searchCityInputElement.blur();
+    // await getCurrentWeather();
+  }
+});
+
+async function getCurrentWeather() {
   const noFoundErrorElement = document.querySelector('[data-js-no-found-error]');
   const weatherSectionElement = document.querySelector('[data-js-weather]');
-  if (searchCityInput.value !== '') {
-    try {
-      let city = await getCoordinatesByCity(searchCityInput.value)
-      weather = await getWeather(city.latitude, city.longitude);
-      renderCurrentWeatherElements(weather);
-      weatherSectionElement.style.display = 'grid';
-      noFoundErrorElement.style.display = 'none';
-      searchCityInput.value = ''
-      console.log(weather);
-    } catch (error) {
+  const cityName = searchCityInputElement.value.trim();
 
-      searchCityInput.value = ''
-      weatherSectionElement.style.display = 'none';
-      noFoundErrorElement.style.display = 'flex';
-      console.error(error);
-    }
+  if (!cityName) {
+    console.log('Пустой ввод');
+    return;
   }
-})
+
+  try {
+    let city = await getCoordinatesByCity(cityName);
+    let weather = await getWeather(city.latitude, city.longitude);
+
+    await renderCurrentWeatherElements(weather);
+
+    weatherSectionElement.style.display = 'grid';
+    noFoundErrorElement.style.display = 'none';
+    searchCityInputElement.value = '';
+
+    console.log('Успешно:', weather);
+
+  } catch (error) {
+    searchCityInputElement.value = '';
+    weatherSectionElement.style.display = 'none';
+    noFoundErrorElement.style.display = 'flex';
+    console.error('Ошибка:', error);
+  }
+}
