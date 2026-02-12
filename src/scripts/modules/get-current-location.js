@@ -1,31 +1,39 @@
 import {getWeather} from './get-weather.js'
+import { renderCurrentWeatherElements } from './render-current-weather.js';
 
 export async function initGeolocation() {
   if ("geolocation" in navigator) {
-    let result = confirm("Разрешаете доступ к геопозиции для отображения корректной погоды?");
-    console.log(result);
+    navigator.geolocation.getCurrentPosition(
+      // Успешное получение позиции
+      async (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
 
-    if (result) {
-      try {
-        navigator.geolocation.getCurrentPosition(async (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+        try {
+          const weather = await getWeather(latitude, longitude);
+          await renderCurrentWeatherElements(weather);
 
-          try {
+          const weatherSectionElement = document.querySelector('[data-js-weather]');
+          const noFoundErrorElement = document.querySelector('[data-js-no-found-error]');
 
-            const weather = await getWeather(latitude, longitude);
-            console.log("Данные погоды:", weather);
-
-            // Можно использовать данные
-            // displayWeather(weather);
-
-          } catch (error) {
-            console.error("Ошибка получения погоды:", error);
+          if (weatherSectionElement) {
+            weatherSectionElement.style.display = 'grid';
           }
-        });
-      } catch (error) {
-        console.error("Ошибка геолокации:", error);
+          if (noFoundErrorElement) {
+            noFoundErrorElement.style.display = 'none';
+          }
+
+        } catch (error) {
+          console.error("Ошибка получения погоды:", error);
+        }
+      },
+
+      // Ошибка получения позиции (пользователь запретил)
+      (error) => {
+        console.warn("Геолокация недоступна:", error.message);
       }
-    }
+    );
+  } else {
+    console.warn("Браузер не поддерживает геолокацию");
   }
 }

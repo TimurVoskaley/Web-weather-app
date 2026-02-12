@@ -31,18 +31,3 @@ export async function getCoordinatesByCity(cityName) {
     throw error;
   }
 }
-
-
-
-//получение названия горрда из координат
-// const reverseGeocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
-//
-// fetch(reverseGeocodeUrl)
-//   .then(response => response.json())
-//   .then(data => {
-//     const cityName = data.address.city ||
-//       data.address.town ||
-//       data.address.village ||
-//       data.address.municipality;
-//     console.log("Город:", cityName);
-//   });

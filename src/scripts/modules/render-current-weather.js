@@ -1,14 +1,23 @@
+import { getWeatherIcon } from './get-weather-icon.js'
+
 export async function renderCurrentWeatherElements(weather) {
   const cityNameElement = document.querySelector('[data-js-current-weather-city-name]');
   const dateElement = document.querySelector('[data-js-weather-date]');
   const currentTemperatureElement = document.querySelector('[data-js-current-temperature]');
+  const weatherIconElement = document.querySelector('[data-js-current-weather-icon]');
 
   try {
     // Ждем получения данных о городе
     const cityData = await getCityName(weather.latitude, weather.longitude);
     currentTemperatureElement.textContent = Math.round(weather.current.temperature_2m);
+
+    const weatherIcon = getWeatherIcon(weather.current.weather_code)
+    weatherIconElement.src = `../../assets/images/${weatherIcon}`;
+
     if (cityData.city && cityData.country) {
       cityNameElement.textContent = `${cityData.city}, ${cityData.country}`;
+    } else {
+      cityNameElement.textContent = `Unknown`;
     }
 
     const currentDateToDisplay = await getCurrentDate(weather.current.time);

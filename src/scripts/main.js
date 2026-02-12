@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initSearchCityInput();
   initHourlyForecastButton();
   initRetryButton();
-  // initGeolocation();
+  initGeolocation();
 });
 
-searchCityButtonElement.addEventListener('click', await getCurrentWeather)
+searchCityButtonElement.addEventListener('click', getCurrentWeather)
 searchCityInputElement.addEventListener('keypress', async (event) => {
   if (event.key === 'Enter') {
     event.preventDefault();
