@@ -15,10 +15,7 @@ export const initSearchCityInput = () => {
 
   // Скрытие списка городов автозаполнения
   inputElement.addEventListener('blur', function() {
-    // Небольшая задержка, чтобы клик по элементу списка успел обработаться
-    // setTimeout(() => {
       autocompleteDropdownElement.classList.remove('dropdown-visible');
-    // }, 200);
   });
 
   // Предотвращаем срабатывание blur при клике на элемент списка

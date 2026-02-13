@@ -34,13 +34,9 @@ export async function renderCurrentWeatherElements(weather) {
 // Получаем назавние населенного пункта из координать полученной погоды
 async function getCityName(lat, lon) {
   try {
-    const reverseGeocodeUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&accept-language=en&zoom=10&addressdetails=1`;
+    const bdcUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`;
+    const response = await fetch(bdcUrl);
 
-    const response = await fetch(reverseGeocodeUrl, {
-      headers: {
-        'User-Agent': 'Web-weather-app/1.0 (timur.fumoff@gmail.com)'
-      }
-    });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -48,12 +44,18 @@ async function getCityName(lat, lon) {
 
     const data = await response.json();
 
+    let cityName = null;
+
+    if (data.locality && !data.locality.includes('Rayon') && !data.locality.includes('район')) {
+      cityName = data.locality;
+      console.log('Выбран населенный пункт (locality):', cityName);
+    } else {
+      cityName = data.city
+    }
+
     return {
-      city: data.address.city ||
-        data.address.town ||
-        data.address.village ||
-        data.address.municipality,
-      country: data.address.country
+      city: cityName || data.principalSubdivision || 'Unknown',
+      country: data.countryName || '',
     };
 
   } catch (error) {
