@@ -5,17 +5,25 @@ export async function renderCurrentWeatherElements(weather) {
   const dateElement = document.querySelector('[data-js-weather-date]');
   const currentTemperatureElement = document.querySelector('[data-js-current-temperature]');
   const weatherIconElement = document.querySelector('[data-js-current-weather-icon]');
+  const feelsLikeElement = document.querySelector('[data-js-feels-like]');
+  const humidityElement = document.querySelector('[data-js-humidity]');
+  const windSpeedElement = document.querySelector('[data-js-wind-speed]');
+  const precipitationElement = document.querySelector('[data-js-precipitation]');
 
   try {
     // Ждем получения данных о городе
     const cityData = await getCityName(weather.latitude, weather.longitude);
     currentTemperatureElement.textContent = Math.round(weather.current.temperature_2m);
+    feelsLikeElement.textContent = Math.round(weather.current.apparent_temperature);
+    humidityElement.textContent = Math.round(weather.current.relative_humidity_2m);
+    windSpeedElement.textContent = Math.round(weather.current.wind_speed_10m);
+    precipitationElement.textContent = Math.round(weather.current.precipitation);
 
     const weatherIcon = getWeatherIcon(weather.current.weather_code)
     weatherIconElement.src = `../../assets/images/${weatherIcon}`;
 
     if (cityData.city && cityData.country) {
-      cityNameElement.textContent = `${cityData.city}, ${cityData.country}`;
+      cityNameElement.textContent = `${cityData.city}, ${cityData.country.replace(/\s*\(the\)\s*$/i, '').trim()}`;
     } else {
       cityNameElement.textContent = `Unknown`;
     }
@@ -46,7 +54,7 @@ async function getCityName(lat, lon) {
 
     let cityName = null;
 
-    if (data.locality && !data.locality.includes('Rayon') && !data.locality.includes('район')) {
+    if (data.city && data.city.includes('Rayon') && !data.city.includes('район')) {
       cityName = data.locality;
       console.log('Выбран населенный пункт (locality):', cityName);
     } else {
