@@ -1,6 +1,6 @@
 async function tryOpenMeteo(cityName) {
   try {
-    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=5`;
+    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=5&language=ru&format=json`;
     const response = await fetch(url);
 
     if (!response.ok) return null;
