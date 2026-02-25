@@ -1,6 +1,6 @@
 import { initHeaderUnitsButton } from './modules/header-units-button.js';
 import { initSearchCityInput } from './modules/search-city-input.js';
-import {initHourlyForecastButton} from "./modules/houtly-forecast.js";
+import {initHourlyForecastButton} from "./modules/hourly-forecast.js";
 import { initRetryButton } from './modules/retry-button.js';
 import { initGeolocation } from './modules/get-current-location.js';
 import {getWeather} from "./modules/get-weather.js";

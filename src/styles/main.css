@@ -942,6 +942,11 @@ main {
   background-color: var(--colors-neutral-600);
   border-radius: 0.5rem;
 }
+@media (hover: hover) {
+  .weather__hourly-button:hover {
+    background-color: var(--colors-neutral-700);
+  }
+}
 .weather__hourly-day-item {
   font-family: var(--font-family-base);
   font-size: 1rem;
