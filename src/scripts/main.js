@@ -7,9 +7,14 @@ import {getWeather} from "./modules/get-weather.js";
 import { getCoordinatesByCity } from './modules/get-city-cordinates.js';
 import { renderCurrentWeatherElements } from './modules/render-current-weather.js';
 
+
+export let weather = null;
+export const setWeather = (newWeather) => {
+  weather = newWeather;
+};
+
 const searchCityButtonElement = document.querySelector('[data-js-search-button]');
 const searchCityInputElement = document.querySelector('[data-js-search-input]');
-let weather = null;
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -42,7 +47,7 @@ async function getCurrentWeather() {
 
   try {
     let city = await getCoordinatesByCity(cityName);
-    let weather = await getWeather(city.latitude, city.longitude);
+    weather = await getWeather(city.latitude, city.longitude);
 
     await renderCurrentWeatherElements(weather);
 

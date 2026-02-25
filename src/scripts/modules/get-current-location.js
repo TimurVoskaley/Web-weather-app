@@ -1,5 +1,7 @@
 import {getWeather} from './get-weather.js'
 import { renderCurrentWeatherElements } from './render-current-weather.js';
+import { setWeather } from '../main.js';
+import { weather } from '../main.js'
 
 export async function initGeolocation() {
   if ("geolocation" in navigator) {
@@ -10,7 +12,8 @@ export async function initGeolocation() {
         const longitude = position.coords.longitude;
 
         try {
-          const weather = await getWeather(latitude, longitude);
+          const currentWeather = await getWeather(latitude, longitude);
+          setWeather(currentWeather);
           await renderCurrentWeatherElements(weather);
 
           const weatherSectionElement = document.querySelector('[data-js-weather]');

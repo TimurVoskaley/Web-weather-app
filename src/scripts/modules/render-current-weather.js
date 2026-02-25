@@ -2,6 +2,7 @@ import { getWeatherIcon } from './get-weather-icon.js'
 import { renderDailyWeather } from './daily-forecast.js'
 import { renderHourlyWeather } from './hourly-forecast.js'
 
+
 export async function renderCurrentWeatherElements(weather) {
   const cityNameElement = document.querySelector('[data-js-current-weather-city-name]');
   const dateElement = document.querySelector('[data-js-weather-date]');
@@ -16,8 +17,8 @@ export async function renderCurrentWeatherElements(weather) {
     const cityData = await getCityName(weather.latitude, weather.longitude);
     feelsLikeElement.innerHTML = `${Math.round(weather.current.apparent_temperature)}&deg;`;
     humidityElement.textContent = `${Math.round(weather.current.relative_humidity_2m)}%`;
-    windSpeedElement.textContent = `${Math.round(weather.current.wind_speed_10m)} ${weather.current_units.wind_speed_10m}`;
-    precipitationElement.textContent = `${Math.round(weather.current.precipitation)} ${weather.current_units.precipitation}`;
+    windSpeedElement.textContent = `${Math.round(weather.current.wind_speed_10m)} ${weather.current_units.wind_speed_10m === 'km/h' ? 'km/h' : 'mph'}`;
+    precipitationElement.textContent = `${Math.round(weather.current.precipitation)} ${weather.current_units.precipitation === 'mm' ? 'mm' : 'in'}`;
     renderDailyWeather(weather)
     renderHourlyWeather(weather)
 
