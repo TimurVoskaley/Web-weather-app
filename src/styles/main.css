@@ -285,7 +285,8 @@ a {
 }
 @media (max-width: 1160px) {
   .container {
-    width: 53.125rem;
+    width: 100%;
+    max-width: 53.125rem;
   }
 }
 @media (width <= 768px) {

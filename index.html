@@ -140,38 +140,28 @@
           <article class="weather__current-card ">
             <div class="weather__current-card-content">
               <div class="weather__current-card-text">
-                <p class="weather__current-card-city" data-js-current-weather-city-name></p>
+                <p class="weather__current-card-city" data-js-current-weather-city-name>Not defined</p>
                 <p class="weather__current-card-date" data-js-weather-date></p>
               </div>
-              <div class="weather__current-card-temperature">
-                <img
-                  class="weather__current-card-icon"
-                  src="./assets/images/icon-sunny.webp"
-                  alt="weather icon"
-                  width="120"
-                  height="120"
-                  data-js-current-weather-icon
-                >
-                <p class="weather__current-card-degrees"><span data-js-current-temperature>-</span></span>&deg</p>
-              </div>
+              <div class="weather__current-card-temperature" data-js-current-temperature-wrapper></div>
             </div>
           </article>
           <ul class="weather__current-details-list">
             <li class="weather__current-details-item">
               <p class="weather__current-details-label">Feels Like</p>
-              <p class="weather__current-details-value"><span data-js-feels-like>-</span>&deg</p>
+              <p class="weather__current-details-value" data-js-feels-like>-</p>
             </li>
             <li class="weather__current-details-item">
               <p class="weather__current-details-label">Humidity</p>
-              <p class="weather__current-details-value"><span data-js-humidity>-</span>%</p>
+              <p class="weather__current-details-value" data-js-humidity>-</p>
             </li>
             <li class="weather__current-details-item">
               <p class="weather__current-details-label">Wind</p>
-              <p class="weather__current-details-value"><span data-js-wind-speed>-</span> km/h</p>
+              <p class="weather__current-details-value" data-js-wind-speed>-</p>
             </li>
             <li class="weather__current-details-item">
             <p class="weather__current-details-label">Precipitation</p>
-            <p class="weather__current-details-value"><span data-js-precipitation>-</span> mm</p>
+            <p class="weather__current-details-value" data-js-precipitation>-</p>
           </li>
           </ul>
         </div>
@@ -179,109 +169,109 @@
           <p class="weather__daily-title">Daily forecast</p>
           <ul class="weather__daily-card-container">
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Tue</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>-->
+<!--              </div>-->
             </li>
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Wed</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Wed</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>-->
+<!--              </div>-->
             </li>
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Thu</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span>&deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Thu</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span>&deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>-->
+<!--              </div>-->
             </li>
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Fri</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Fri</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>-->
+<!--              </div>-->
             </li>
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Sat</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Sat</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg</span>-->
+<!--              </div>-->
             </li>
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Sun</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Sun</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>-->
+<!--              </div>-->
             </li>
             <li class="weather__daily-card" data-js-daily-card>
-              <span class="weather__daily-card-label" data-js-daily-card-label>Mon</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-                data-js-daily-card-icon
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>
-                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>
-              </div>
+<!--              <span class="weather__daily-card-label" data-js-daily-card-label>Mon</span>-->
+<!--              <img-->
+<!--                class="weather__daily-card-icon"-->
+<!--                src="./assets/images/icon-rain.webp"-->
+<!--                alt="weather icon"-->
+<!--                width="60"-->
+<!--                height="60"-->
+<!--                data-js-daily-card-icon-->
+<!--              >-->
+<!--              <div class="weather__daily-card-temperature-wrapper">-->
+<!--                <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp><span>20</span> &deg;</span>-->
+<!--                <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp><span>14</span> &deg;</span>-->
+<!--              </div>-->
             </li>
           </ul>
         </div>

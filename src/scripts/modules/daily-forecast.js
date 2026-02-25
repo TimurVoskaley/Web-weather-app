@@ -14,28 +14,26 @@ export function renderDailyWeather(weather) {
     const minTemp = Math.round(temperature_2m_min[index]);
     const weatherCode = weather_code[index];
 
-    const cardLabelElement = card.querySelector('[data-js-daily-card-label]');
-    const cardIconElement = card.querySelector('[data-js-daily-card-icon]');
-    const cardMaxTempElement = card.querySelector('[data-js-daily-card-max-temp] span');
-    const cardMinTempElement = card.querySelector('[data-js-daily-card-min-temp] span');
-
-    if (cardLabelElement && time) {
+    if (weatherCode !== undefined && time && maxTemp !== undefined && minTemp !== undefined ) {
       // Получаем текущую дату и вычисляем день недели для каждого индекса
       const today = new Date();
       const date = new Date(time[index]);
       const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-      cardLabelElement.textContent = daysOfWeek[date.getDay()];
-    }
-
-    if (cardIconElement && weatherCode !== undefined) {
       const weatherIcon = getWeatherIcon(weatherCode)
-      cardIconElement.src = `../../assets/images/${weatherIcon}`;
+      card.innerHTML = `
+        <span class="weather__daily-card-label" data-js-daily-card-label>${daysOfWeek[date.getDay()]}</span>
+          <img
+            class="weather__daily-card-icon"
+            src="./assets/images/${weatherIcon}"
+            alt="weather icon"
+            width="60"
+            height="60"
+          >
+          <div class="weather__daily-card-temperature-wrapper">
+            <span class="weather__daily-card-temperature-max" data-js-daily-card-max-temp>${maxTemp}&deg;</span>
+            <span class="weather__daily-card-temperature-min" data-js-daily-card-min-temp>${minTemp}&deg</span>
+          </div>
+      `
     }
-
-    if (maxTemp !== undefined && minTemp !== undefined && cardMaxTempElement && cardMinTempElement) {
-      cardMaxTempElement.textContent = maxTemp;
-      cardMinTempElement.textContent = minTemp;
-    }
-
   })
 }
