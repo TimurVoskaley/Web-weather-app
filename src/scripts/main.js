@@ -6,6 +6,7 @@ import { initGeolocation } from './modules/get-current-location.js';
 import {getWeather} from "./modules/get-weather.js";
 import { getCoordinatesByCity } from './modules/get-city-cordinates.js';
 import { renderCurrentWeatherElements } from './modules/render-current-weather.js';
+import  {getCities, saveCity} from './modules/citiesStorage.js';
 
 
 export let weather = null;
@@ -15,7 +16,7 @@ export const setWeather = (newWeather) => {
 
 const searchCityButtonElement = document.querySelector('[data-js-search-button]');
 const searchCityInputElement = document.querySelector('[data-js-search-input]');
-
+let cities = null
 
 document.addEventListener("DOMContentLoaded", () => {
   initHeaderUnitsButton();
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHourlyForecastButton();
   initRetryButton();
   initGeolocation();
+  cities = getCities();
 });
 
 searchCityButtonElement.addEventListener('click', getCurrentWeather)
@@ -31,19 +33,24 @@ searchCityInputElement.addEventListener('keypress', async (event) => {
     event.preventDefault();
     searchCityButtonElement.click()
     searchCityInputElement.blur();
-    // await getCurrentWeather();
   }
 });
 
 async function getCurrentWeather() {
   const noFoundErrorElement = document.querySelector('[data-js-no-found-error]');
   const weatherSectionElement = document.querySelector('[data-js-weather]');
-  const cityName = searchCityInputElement.value.trim();
+
+  // Получаем значение и форматируем
+  const rawCityName = searchCityInputElement.value.trim();
+  const cityName = rawCityName.split(' ').map(word =>
+    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+  ).join(' ');
 
   if (!cityName) {
     console.log('Пустой ввод');
     return;
   }
+  saveCity(cityName)
 
   try {
     let city = await getCoordinatesByCity(cityName);
