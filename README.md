@@ -65,6 +65,3 @@ Users should be able to:
 
 - GitHub - [@TimurVoskaley](https://github.com/TimurVoskaley)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
