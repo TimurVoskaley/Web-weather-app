@@ -51,7 +51,7 @@
             type="button"
             data-js-header-dropdown-button
           >
-            <p>Switch to Imperial</p>
+            Switch to Imperial
           </button>
 
           <div class="header-dropdown__info">
@@ -84,7 +84,7 @@
     </div>
   </header>
 
-  <div class="container api-error">
+  <div class="container api-error" data-js-api-error>
     <img
       src="./assets/images/icon-error.svg"
       alt="We couldn’t connect to the server (API error). Please try again in a few moments."
@@ -101,7 +101,7 @@
     </button>
   </div>
 
-  <main class="container">
+  <main class="container" data-js-main-contant>
     <h1 class="main__title">How’s the sky looking today?</h1>
 
     <section class="search">
@@ -118,12 +118,7 @@
             data-js-search-input
           >
           <div class="search__autocomplete dropdown" data-js-search-autocomplete-dropdown >
-            <ul class="search__autocomplete-list" aria-label="Search suggestions" data-js-autocomplete-list>
-              <li class="search__autocomplete-item" data-js-autocomplete-item>City Name 1</li>
-              <li class="search__autocomplete-item" data-js-autocomplete-item>City Name 2</li>
-              <li class="search__autocomplete-item" data-js-autocomplete-item>City Name 3</li>
-              <li class="search__autocomplete-item" data-js-autocomplete-item>City Name 4</li>
-            </ul>
+            <ul class="search__autocomplete-list" aria-label="Search suggestions" data-js-autocomplete-list></ul>
           </div>
         </div>
 
@@ -132,149 +127,49 @@
 
     </section>
 
-    <p class="no-search-result-found">No search result found!</p>
+    <p class="no-search-result-found" data-js-no-found-error>No search result found!</p>
 
-    <section class="weather" >
+    <section class="weather" data-js-weather>
       <div class="weather__info-wrapper">
         <div class="weather__current">
-          <article class="weather__current-card ">
+          <article class="weather__current-card" data-js-current-weather-card>
             <div class="weather__current-card-content">
               <div class="weather__current-card-text">
-                <p class="weather__current-card-city">Berlin, Germany</p>
-                <p class="weather__current-card-date">Tuesday, Aug 5, 2025</p>
+                <p class="weather__current-card-city" data-js-current-weather-city-name>Not defined</p>
+                <p class="weather__current-card-date" data-js-weather-date></p>
               </div>
-              <div class="weather__current-card-temperature">
-                <img
-                  class="weather__current-card-icon"
-                  src="./assets/images/icon-sunny.webp"
-                  alt="weather icon"
-                  width="120"
-                  height="120"
-                >
-                <p class="weather__current-card-degrees">20&deg;</p>
-              </div>
+              <div class="weather__current-card-temperature" data-js-current-temperature-wrapper></div>
             </div>
           </article>
           <ul class="weather__current-details-list">
             <li class="weather__current-details-item">
               <p class="weather__current-details-label">Feels Like</p>
-              <p class="weather__current-details-value">18&deg;</p>
+              <p class="weather__current-details-value" data-js-feels-like>-</p>
             </li>
             <li class="weather__current-details-item">
               <p class="weather__current-details-label">Humidity</p>
-              <p class="weather__current-details-value">46<span>%</span></p>
+              <p class="weather__current-details-value" data-js-humidity>-</p>
             </li>
             <li class="weather__current-details-item">
               <p class="weather__current-details-label">Wind</p>
-              <p class="weather__current-details-value">14 <span>km/h</span></p>
+              <p class="weather__current-details-value" data-js-wind-speed>-</p>
             </li>
             <li class="weather__current-details-item">
             <p class="weather__current-details-label">Precipitation</p>
-            <p class="weather__current-details-value">0 <span>mm</span></p>
+            <p class="weather__current-details-value" data-js-precipitation>-</p>
           </li>
           </ul>
         </div>
         <div class="weather__daily">
           <p class="weather__daily-title">Daily forecast</p>
           <ul class="weather__daily-card-container">
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
-            <div class="weather__daily-card">
-              <span class="weather__daily-card-label">Tue</span>
-              <img
-                class="weather__daily-card-icon"
-                src="./assets/images/icon-rain.webp"
-                alt="weather icon"
-                width="60"
-                height="60"
-              >
-              <div class="weather__daily-card-temperature-wrapper">
-                <span class="weather__daily-card-temperature-max">20&deg;</span>
-                <span class="weather__daily-card-temperature-min">14&deg;</span>
-              </div>
-            </div>
+            <li class="weather__daily-card" data-js-daily-card></li>
+            <li class="weather__daily-card" data-js-daily-card></li>
+            <li class="weather__daily-card" data-js-daily-card></li>
+            <li class="weather__daily-card" data-js-daily-card></li>
+            <li class="weather__daily-card" data-js-daily-card></li>
+            <li class="weather__daily-card" data-js-daily-card></li>
+            <li class="weather__daily-card" data-js-daily-card></li>
           </ul>
         </div>
       </div>
@@ -287,7 +182,7 @@
             type="button"
             data-js-hourly-button
           >
-            <span>Tuesday</span>
+            <span>-</span>
             <img class="units-button__arrow-icon"
                  src="./assets/images/icon-dropdown.svg"
                  alt=""
@@ -297,159 +192,18 @@
           </button>
           <div class="weather__hourly-dropdown dropdown " data-js-weather-dropdown>
             <ul class="weather__hourly-day-list" data-js-weather-dropdown-list>
-              <li class="weather__hourly-day-item">Monday</li>
-              <li class="weather__hourly-day-item selected" >Tuesday</li>
-              <li class="weather__hourly-day-item">Wednesday</li>
-              <li class="weather__hourly-day-item">Thursday</li>
-              <li class="weather__hourly-day-item">Friday</li>
-              <li class="weather__hourly-day-item">Saturday</li>
-              <li class="weather__hourly-day-item">Sunday</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
+              <li class="weather__hourly-day-item" data-js-hourly-weekday>-</li>
             </ul>
           </div>
         </div>
 
-        <ul class="weather__hourly-list">
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-<!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-<!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-          <li class="weather__hourly-item">
-            <img
-              class="weather__hourly-image"
-              src="../../../assets/images/icon-overcast.webp"
-              alt="overcast"
-              width="40"
-              height="40"
-              loading="lazy"
-            />
-            <!--            <div class="weather__hourly-content">-->
-            <span class="weather__hourly-time">3 pm</span>
-            <span class="weather__hourly-temperature">20&deg;</span>
-            <!--            </div>-->
-          </li>
-        </ul>
+        <ul class="weather__hourly-list" data-js-hourly-weather-list></ul>
       </div>
     </section>
   </main>

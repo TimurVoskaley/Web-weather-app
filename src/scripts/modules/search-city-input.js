@@ -10,15 +10,27 @@ export const initSearchCityInput = () => {
 
   // Показ списка городов автозаполнения
   inputElement.addEventListener('focus', function() {
-    autocompleteDropdownElement.classList.add('dropdown-visible');
+    autocompleteListElement.innerHTML = '';
+
+    let cities = JSON.parse(localStorage.getItem('cities')) || [];
+    if (cities.length > 0) {
+
+      cities.forEach((item) => {
+        const li = document.createElement("li");
+        li.classList.add("search__autocomplete-item");
+        li.textContent = item;
+        autocompleteListElement.appendChild(li);
+      })
+
+
+      autocompleteDropdownElement.classList.add('dropdown-visible');
+      console.log(cities);
+    }
   });
 
   // Скрытие списка городов автозаполнения
   inputElement.addEventListener('blur', function() {
-    // Небольшая задержка, чтобы клик по элементу списка успел обработаться
-    // setTimeout(() => {
       autocompleteDropdownElement.classList.remove('dropdown-visible');
-    // }, 200);
   });
 
   // Предотвращаем срабатывание blur при клике на элемент списка
@@ -33,10 +45,6 @@ export const initSearchCityInput = () => {
     if(e.target.matches('.search__autocomplete-item')) {
       inputElement.value = e.target.textContent;
       autocompleteDropdownElement.classList.remove('dropdown-visible');
-      // inputElement.blur();
-
-      // Можно вызвать дополнительный функционал, например поиск погоды
-      // searchWeather(inputElement.value);
     }
   });
 };

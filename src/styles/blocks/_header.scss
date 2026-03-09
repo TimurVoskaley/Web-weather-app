@@ -35,10 +35,8 @@
       }
     }
 
-    // Дополнительно: улучшаем тач-опыт
     @media (hover: none) and (pointer: coarse) {
       &:active {
-        // Усиливаем эффект для тач-устройств
         transform: scale(1.03);
         transition: transform 0.1s;
       }

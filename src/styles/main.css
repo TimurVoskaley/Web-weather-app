@@ -285,7 +285,8 @@ a {
 }
 @media (max-width: 1160px) {
   .container {
-    width: 53.125rem;
+    width: 100%;
+    max-width: 53.125rem;
   }
 }
 @media (width <= 768px) {
@@ -736,14 +737,18 @@ main {
   align-items: center;
   width: 100%;
   padding-inline: 1.5rem;
+  background-color: var(--colors-neutral-800);
+  background-image: none;
+  border-radius: 1.25rem;
+}
+.weather__current-card.is-loaded {
   background-image: url("../../assets/images/bg-today-large.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  border-radius: 1.25rem;
 }
 @media (width <= 481px) {
-  .weather__current-card {
+  .weather__current-card.is-loaded {
     background-size: cover;
     background-image: url("../../assets/images/bg-today-small.svg");
   }
@@ -771,6 +776,8 @@ main {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0;
+  max-width: 25rem;
+  width: 100%;
   margin-bottom: 0.75rem;
 }
 .weather__current-card-date {
@@ -939,6 +946,11 @@ main {
   color: var(--colors-neutral-0);
   background-color: var(--colors-neutral-600);
   border-radius: 0.5rem;
+}
+@media (hover: hover) {
+  .weather__hourly-button:hover {
+    background-color: var(--colors-neutral-700);
+  }
 }
 .weather__hourly-day-item {
   font-family: var(--font-family-base);
