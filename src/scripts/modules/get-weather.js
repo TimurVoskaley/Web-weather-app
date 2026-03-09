@@ -20,7 +20,6 @@ export async function getWeather(lat, lon, metric = true) {
 
   } catch (error) {
     console.error('Ошибка получения погоды:', error);
-    console.log('error');
     // Бросаем ошибку дальше, чтобы вызывающий код знал об ошибке
     throw error;
   }

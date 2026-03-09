@@ -3,7 +3,7 @@ import { renderDailyWeather } from './daily-forecast.js'
 import { renderHourlyWeather } from './hourly-forecast.js'
 
 
-export async function renderCurrentWeatherElements(weather) {
+export async function updateWeatherUI(weather) {
   const cityNameElement = document.querySelector('[data-js-current-weather-city-name]');
   const dateElement = document.querySelector('[data-js-weather-date]');
   const feelsLikeElement = document.querySelector('[data-js-feels-like]');
@@ -11,6 +11,7 @@ export async function renderCurrentWeatherElements(weather) {
   const windSpeedElement = document.querySelector('[data-js-wind-speed]');
   const precipitationElement = document.querySelector('[data-js-precipitation]');
   const temperatureContainer = document.querySelector('[data-js-current-temperature-wrapper]');
+  const currentWeatherCardElement = document.querySelector('[data-js-current-weather-card]');
 
   try {
     // Ждем получения данных о городе
@@ -19,6 +20,7 @@ export async function renderCurrentWeatherElements(weather) {
     humidityElement.textContent = `${Math.round(weather.current.relative_humidity_2m)}%`;
     windSpeedElement.textContent = `${Math.round(weather.current.wind_speed_10m)} ${weather.current_units.wind_speed_10m === 'km/h' ? 'km/h' : 'mph'}`;
     precipitationElement.textContent = `${Math.round(weather.current.precipitation)} ${weather.current_units.precipitation === 'mm' ? 'mm' : 'in'}`;
+    currentWeatherCardElement.classList.add('is-loaded');
     renderDailyWeather(weather)
     renderHourlyWeather(weather)
 

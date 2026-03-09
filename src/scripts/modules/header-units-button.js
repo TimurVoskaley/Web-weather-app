@@ -1,7 +1,7 @@
 import { weather } from '../main.js'
 import { setWeather } from '../main.js';
 import {getWeather} from './get-weather.js'
-import { renderCurrentWeatherElements } from './render-current-weather.js';
+import { updateWeatherUI } from './render-current-weather.js';
 
 const unitsToggleButtonElement = document.querySelector("[data-js-header-dropdown-button]");
 let isMetric = true;
@@ -75,7 +75,7 @@ unitsToggleButtonElement.addEventListener('click', async () => {
 
       let newUnitsWeather = await getWeather(weather.latitude, weather.longitude, isMetric)
       setWeather(newUnitsWeather);
-      renderCurrentWeatherElements(weather)
+      updateWeatherUI(weather)
 
     } catch(error) {
 

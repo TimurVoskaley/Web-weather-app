@@ -46,7 +46,6 @@ export const initSearchCityInput = () => {
       inputElement.value = e.target.textContent;
       autocompleteDropdownElement.classList.remove('dropdown-visible');
       // inputElement.blur();
-
     }
   });
 };

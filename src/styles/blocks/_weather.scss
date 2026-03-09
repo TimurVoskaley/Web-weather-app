@@ -34,17 +34,23 @@
       align-items: center;
       width: 100%;
       padding-inline: rem(24);
-
-      background-image: url("../../assets/images/bg-today-large.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
+      background-color: var(--colors-neutral-800);
+      background-image: none;
       border-radius: rem(20);
 
-      @include mobile {
+      &.is-loaded {
+        background-image: url("../../assets/images/bg-today-large.svg");
+        background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../../assets/images/bg-today-small.svg");
+        background-position: center center;
+
+        @include mobile {
+          background-size: cover;
+          background-image: url("../../assets/images/bg-today-small.svg");
+        }
       }
+
+
 
       @media (width < 375px) {
         padding-inline: rem(16);

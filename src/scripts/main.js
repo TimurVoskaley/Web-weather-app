@@ -5,7 +5,7 @@ import { initRetryButton } from './modules/retry-button.js';
 import { initGeolocation } from './modules/get-current-location.js';
 import {getWeather} from "./modules/get-weather.js";
 import { getCoordinatesByCity } from './modules/get-city-cordinates.js';
-import { renderCurrentWeatherElements } from './modules/render-current-weather.js';
+import { updateWeatherUI } from './modules/render-current-weather.js';
 import  {getCities, saveCity} from './modules/citiesStorage.js';
 
 
@@ -16,6 +16,10 @@ export const setWeather = (newWeather) => {
 
 const searchCityButtonElement = document.querySelector('[data-js-search-button]');
 const searchCityInputElement = document.querySelector('[data-js-search-input]');
+const noFoundErrorElement = document.querySelector('[data-js-no-found-error]');
+const weatherSectionElement = document.querySelector('[data-js-weather]');
+const mainContantElement = document.querySelector('[data-js-main-contant]');
+const apiErrorContainer = document.querySelector('[data-js-api-error]');
 let cities = null
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,26 +41,24 @@ searchCityInputElement.addEventListener('keypress', async (event) => {
 });
 
 async function getCurrentWeather() {
-  const noFoundErrorElement = document.querySelector('[data-js-no-found-error]');
-  const weatherSectionElement = document.querySelector('[data-js-weather]');
+  noFoundErrorElement.style.display = 'none';
+  if (apiErrorContainer) apiErrorContainer.style.display = 'none';
 
   // Получаем значение и форматируем
   const rawCityName = searchCityInputElement.value.trim();
-  const cityName = rawCityName.split(' ').map(word =>
-    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-  ).join(' ');
+  const cityName = rawCityName
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
 
-  if (!cityName) {
-    console.log('Пустой ввод');
-    return;
-  }
+  if (!cityName) return;
   saveCity(cityName)
 
   try {
     let city = await getCoordinatesByCity(cityName);
     weather = await getWeather(city.latitude, city.longitude);
 
-    await renderCurrentWeatherElements(weather);
+    await updateWeatherUI(weather);
 
     weatherSectionElement.style.display = 'grid';
     noFoundErrorElement.style.display = 'none';
@@ -66,8 +68,20 @@ async function getCurrentWeather() {
 
   } catch (error) {
     searchCityInputElement.value = '';
-    weatherSectionElement.style.display = 'none';
-    noFoundErrorElement.style.display = 'flex';
-    console.error('Ошибка:', error);
+
+  //Щибка город не найдет
+  if (error.message.includes('не найден') || error.message.toLowerCase().includes('not found')) {
+      console.log('🔍 Город не найден:', error.message);
+      weatherSectionElement.style.display = 'none';
+      noFoundErrorElement.style.display = 'block';
+      if (apiErrorContainer) apiErrorContainer.style.display = 'none';
+    }
+    // 🔹 3. Другие ошибки API (500, timeout, bad response)
+    else {
+      console.error('⚠️ Неизвестная ошибка:', error);
+      mainContantElement.style.display = 'none';
+      noFoundErrorElement.style.display = 'none';
+      if (apiErrorContainer) apiErrorContainer.style.display = 'flex';
+    }
   }
 }

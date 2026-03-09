@@ -1,5 +1,5 @@
 import {getWeather} from './get-weather.js'
-import { renderCurrentWeatherElements } from './render-current-weather.js';
+import { updateWeatherUI } from './render-current-weather.js';
 import { setWeather } from '../main.js';
 import { weather } from '../main.js'
 
@@ -14,7 +14,7 @@ export async function initGeolocation() {
         try {
           const currentWeather = await getWeather(latitude, longitude);
           setWeather(currentWeather);
-          await renderCurrentWeatherElements(weather);
+          await updateWeatherUI(weather);
 
           const weatherSectionElement = document.querySelector('[data-js-weather]');
           const noFoundErrorElement = document.querySelector('[data-js-no-found-error]');

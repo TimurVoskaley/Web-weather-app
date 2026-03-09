@@ -737,14 +737,18 @@ main {
   align-items: center;
   width: 100%;
   padding-inline: 1.5rem;
+  background-color: var(--colors-neutral-800);
+  background-image: none;
+  border-radius: 1.25rem;
+}
+.weather__current-card.is-loaded {
   background-image: url("../../assets/images/bg-today-large.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  border-radius: 1.25rem;
 }
 @media (width <= 481px) {
-  .weather__current-card {
+  .weather__current-card.is-loaded {
     background-size: cover;
     background-image: url("../../assets/images/bg-today-small.svg");
   }
