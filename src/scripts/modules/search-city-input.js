@@ -45,7 +45,6 @@ export const initSearchCityInput = () => {
     if(e.target.matches('.search__autocomplete-item')) {
       inputElement.value = e.target.textContent;
       autocompleteDropdownElement.classList.remove('dropdown-visible');
-      // inputElement.blur();
     }
   });
 };

@@ -23,7 +23,6 @@ export const initHeaderUnitsButton = () => {
   // Закрытие dropdown по клику в любое место документа вне dropdown
   document.addEventListener('click', function(e) {
     // Закрываем только если клик был вне dropdown и не по кнопке
-    // if (!headerDropdownElement.contains(e.target) && e.target !== unitsBtnElement) {
     if (!e.target.classList.contains('dropdown')) {
       headerDropdownElement.classList.remove('dropdown-visible');
     }

@@ -44,7 +44,6 @@ async function getCurrentWeather() {
   noFoundErrorElement.style.display = 'none';
   if (apiErrorContainer) apiErrorContainer.style.display = 'none';
 
-  // Получаем значение и форматируем
   const rawCityName = searchCityInputElement.value.trim();
   const cityName = rawCityName
     .split(' ')
@@ -69,14 +68,14 @@ async function getCurrentWeather() {
   } catch (error) {
     searchCityInputElement.value = '';
 
-  //Щибка город не найдет
+  // Щибка город не найдет
   if (error.message.includes('не найден') || error.message.toLowerCase().includes('not found')) {
       console.log('🔍 Город не найден:', error.message);
       weatherSectionElement.style.display = 'none';
       noFoundErrorElement.style.display = 'block';
       if (apiErrorContainer) apiErrorContainer.style.display = 'none';
     }
-    // 🔹 3. Другие ошибки API (500, timeout, bad response)
+    //  3. Другие ошибки API
     else {
       console.error('⚠️ Неизвестная ошибка:', error);
       mainContantElement.style.display = 'none';
