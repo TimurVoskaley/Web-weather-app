@@ -63,7 +63,7 @@ async function getCurrentWeather() {
     noFoundErrorElement.style.display = 'none';
     searchCityInputElement.value = '';
 
-    console.log('Успешно:', weather);
+    // console.log('Успешно:', weather);
 
   } catch (error) {
     searchCityInputElement.value = '';
