@@ -24,7 +24,6 @@ export const initSearchCityInput = () => {
 
 
       autocompleteDropdownElement.classList.add('dropdown-visible');
-      console.log(cities);
     }
   });
 

@@ -61,7 +61,7 @@ export function renderHourlyWeather(weather) {
     hourlyButtonElement.textContent = currentDate;
   }
 
-  // ✅ ОДНА функция возвращает и даты, и названия дней
+  // функция возвращает и даты, и названия дней
   const daysData = getDaysData(time);
 
   // Сохраняем данные для использования в обработчиках

@@ -66,14 +66,14 @@ export async function getCoordinatesByCity(cityName) {
   // Сначала пробуем Open-Meteo
   const openMeteoResult = await tryOpenMeteo(cityName);
   if (openMeteoResult) {
-    console.log('✅ Open-Meteo успешно:', openMeteoResult.name);
+    // console.log('✅ Open-Meteo успешно:', openMeteoResult.name);
     return openMeteoResult;
   }
 
   // Затем Nominatim
   const nominatimResult = await tryNominatim(cityName);
   if (nominatimResult) {
-    console.log('✅ Nominatim успешно:', nominatimResult.name);
+    // console.log('✅ Nominatim успешно:', nominatimResult.name);
     return nominatimResult;
   }
 
