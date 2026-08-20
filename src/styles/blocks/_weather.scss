@@ -213,7 +213,8 @@
 
     &-button {
       @include text-preset-7;
-      padding: rem(8) rem(16);
+      padding-inline: rem(16);
+      height: 35.2px;
       display: flex;
       align-items: center;
       justify-content: center;

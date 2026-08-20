@@ -79,6 +79,7 @@ export function renderHourlyWeather(weather) {
 
       // Если это текущий день, выделяем и показываем его погоду
       if (dayData.dayName === currentDate) {
+        weekDayElements.forEach(el => el.classList.remove('selected'));
         element.classList.add('selected');
         displayHourlyForDate(hourlyData, dayData.date);
       }

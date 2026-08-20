@@ -938,7 +938,8 @@ main {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0;
-  padding: 0.5rem 1rem;
+  padding-inline: 1rem;
+  height: 35.2px;
   display: flex;
   align-items: center;
   justify-content: center;
